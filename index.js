@@ -148,3 +148,14 @@ document.getElementById("h1").onmouseover = event => {
     iteration += 1 / 3;
   }, 100);
 }
+
+
+
+window.onload = function() {
+  document.querySelector('#loader').style.display = 'flex';
+  // simulate a long-running task
+  setTimeout(function() {
+    // hide loader when task is complete
+    document.querySelector('#loader').style.display = 'none';
+  }, 2000);
+};
