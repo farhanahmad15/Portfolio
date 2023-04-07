@@ -96,21 +96,14 @@ submitButton.addEventListener("click", function() {
     // Get the value of the input box
     var subjectVal = subject.value;
     var messageVal = message.value;
-    var link = `mailto:farhanisawake@gmail.com?subject=${encodeURIComponent(subjectVal)}&body=${encodeURIComponent(messageVal)}`
+    var link = `mailto:nahrafswebsite@gmail.com?subject=${encodeURIComponent(subjectVal)}&body=${encodeURIComponent(messageVal)}`
     window.open(link)
 
     // Log the input value to the console
     // console.log(link);
 });
 
-// window.addEventListener('scroll', () => {
-//     const logo = document.querySelector('.logo');
-//     if (window.scrollY > 20) {
-//       logo.classList.add('sticky');
-//     } else {
-//       logo.classList.remove('sticky');
-//     }
-//   });
+
   
 
 
@@ -156,4 +149,14 @@ document.getElementById("h1").onmouseover = event => {
 window.onload = function(){
   const loader = document.querySelector("#loader");
     loader.style.display = "none"; // hide loader once page is loaded 
+}
+
+
+
+document.getElementById('amogus').onclick = function(){
+  if (document.querySelector('.amoguss').style.display === 'none') {
+    document.querySelector('.amoguss').style.display = 'block'
+  } else {
+    document.querySelector('.amoguss').style.display = 'none'
+  }
 }
