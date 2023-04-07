@@ -151,11 +151,9 @@ document.getElementById("h1").onmouseover = event => {
 
 
 
-window.onload = function() {
-  document.querySelector('#loader').style.display = 'flex';
-  // simulate a long-running task
-  setTimeout(function() {
-    // hide loader when task is complete
-    document.querySelector('#loader').style.display = 'none';
-  }, 2000);
-};
+
+
+window.onload = function(){
+  const loader = document.querySelector("#loader");
+    loader.style.display = "none"; // hide loader once page is loaded 
+}
