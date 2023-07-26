@@ -1,5 +1,5 @@
 <div align='center'>
-<h1>Fome's Portfolio</h1>
+<h1>Farhan's Portfolio</h1>
 <h3>Ughh the site for my porfolio ig</h3>
 </div>
 
