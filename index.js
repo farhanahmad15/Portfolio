@@ -44,7 +44,7 @@ skills.addEventListener("click", () =>{
 
 
 function redirect(){
- window.open("https://github.com/FOMEISTAKEN")
+ window.open("https://github.com/farhanahmad15")
 }
 // function sendMail() {
 //     var link = "mailto:me@example.com"

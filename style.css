@@ -31,7 +31,7 @@ body::-webkit-scrollbar {
   min-height: 100vh;
   width: 100%;
   background-color: #485461;
-  background-image: url("https://cdn.discordapp.com/attachments/1008571088919343124/1034067029034016768/Fome_darkish_teal_void_14368e1e-566f-42c5-b1a1-11ab433e54e8.png");
+  background-image: url("https://cdn.discordapp.com/attachments/1008571088919343124/1034067029034016768/Fome_darkish_teal_void_14368e1e-566f-42c5-b1a1-11ab433e54e8.webp");
   /* background-image: linear-gradient(135deg, #485461 0%, #28313b 74%); */
   overflow-x: hidden;
   background-attachment: fixed;
@@ -133,7 +133,7 @@ body::-webkit-scrollbar {
 }
 header {
   min-height: 100vh;
-  background: url(bg.png) no-repeat top center / cover;
+  background: url(bg.webp) no-repeat top center / cover;
   background-attachment: fixed;
   position: relative;
 }
@@ -315,7 +315,7 @@ ul {
 
 .second {
   min-height: 250vh;
-  background: url(bg.png) no-repeat top center / cover;
+  background: url(bg.webp) no-repeat top center / cover;
   background-blend-mode: multiply;
   /* background-color: rgba(43, 51, 59, 0.322); */
   background-attachment: fixed;
@@ -355,7 +355,7 @@ ul {
 }
 
 footer {
-  background: url(bg.png) no-repeat top center / cover;
+  background: url(bg.webp) no-repeat top center / cover;
   background-blend-mode: multiply;
   /* background-color: rgba(43, 51, 59, 0.322); */
   background-attachment: fixed;
@@ -383,7 +383,7 @@ hr {
   width: 100%;
 }
 .mh-skills {
-  background: url(bg.png) no-repeat top center / cover;
+  background: url(bg.webp) no-repeat top center / cover;
   background-blend-mode: multiply;
   /* background-color: rgba(43, 51, 59, 0.322); */
   background-attachment: fixed;
@@ -505,7 +505,7 @@ hr {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: url(bg.png) no-repeat top center / cover;
+  background: url(bg.webp) no-repeat top center / cover;
   background-blend-mode: multiply;
   /* background-color: rgba(43, 51, 59, 0.322); */
   background-attachment: fixed;
@@ -532,7 +532,7 @@ hr {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: url(bg.png) no-repeat top center / cover;
+    background: url(bg.webp) no-repeat top center / cover;
     background-blend-mode: multiply;
     /* background-color: rgba(43, 51, 59, 0.322); */
     background-attachment: fixed;
@@ -640,39 +640,37 @@ a {
   }
 }
 .amogus {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 100000000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100000000;
 }
 
 .amogus > img {
-    position: absolute;
-    display: none;
-    width: 50px;
-    height: 50px;
-    animation-name: bouncing;
-    animation-duration: 10s;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
+  position: absolute;
+  display: none;
+  width: 50px;
+  height: 50px;
+  animation-name: bouncing;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes bouncing {
+  0% {
+    transform: translate(0, 0);
   }
-  
-  @keyframes bouncing {
-    0% {
-      transform: translate(0, 0) ;
-    }
-    25% {
-      transform: translate(calc(100vw - 50px), calc(100vh - 50px));
-    }
-    50% {
-      transform: translate(calc(100vw - 50px), 0);
-    }
-    75% {
-      transform: translate(0, calc(100vh - 50px));
-    }
-    100% {
-      transform: translate(0, 0);
-    }
+  25% {
+    transform: translate(calc(100vw - 50px), calc(100vh - 50px));
   }
-  
-  
+  50% {
+    transform: translate(calc(100vw - 50px), 0);
+  }
+  75% {
+    transform: translate(0, calc(100vh - 50px));
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
