@@ -523,10 +523,25 @@ hr {
   width: 40rem;
   padding: 10px;
 }
+.mobilewarn {
+  display: none;
+}
 
 @media only screen and (max-width: 600px) {
+  .daddy {
+    display: none;
+  }
   .contact {
     display: none;
+  }
+  .mobilewarn {
+    display: block;
+    background: url(bg.webp) no-repeat top center / cover;
+    background-blend-mode: multiply;
+    /* background-color: rgba(43, 51, 59, 0.322); */
+    background-attachment: fixed;
+    transform-style: preserve-3d;
+    color: #072745;
   }
   .mobilecontact {
     display: flex;
@@ -537,15 +552,26 @@ hr {
     /* background-color: rgba(43, 51, 59, 0.322); */
     background-attachment: fixed;
     transform-style: preserve-3d;
+    height: 10rem;
   }
   .mobilecontact button {
     text-decoration: none;
-    color: white;
+    color: black;
     width: 7rem;
     height: 3rem;
-    background-color: #0bceaf;
+    font-weight: bold;
+    font-size: 1rem;
+    background-color: #5dbbb3;
     border: none;
     border-radius: 10px;
+    transition:  all 0.5s;
+  }
+  .mobilecontact button:hover {
+    text-decoration: none;
+    color: white;
+    background-color: #2a61ae;
+    cursor: pointer;
+  
   }
 }
 
