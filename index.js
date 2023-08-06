@@ -1,50 +1,70 @@
-const hamburger_menu = document.querySelector(".hamburger-menu")
-const container = document.querySelector(".container")
-const projects = document.getElementById('projects')
-const contact = document.getElementById('contact')
-const skills = document.getElementById('skills')
-const logo = document.querySelector('.logo')
-hamburger_menu.addEventListener("click", () =>{
-    container.classList.toggle("active")
-    logo.classList.toggle('active')
-    document.querySelector('body').classList.toggle('open')
-    document.querySelector('.scrolltext').classList.toggle('activescroll')
-})
+// const hamburger_menu = document.querySelector(".hamburger-menu")
+// const container = document.querySelector(".container")
+// const projects = document.getElementById('projects')
+// const contact = document.getElementById('contact')
+// const skills = document.getElementById('skills')
+// const logo = document.querySelector('.logo')
+// hamburger_menu.addEventListener("click", () =>{
+//     container.classList.toggle("active")
+//     logo.classList.toggle('active')
+//     document.querySelector('body').classList.toggle('open')
+//     document.querySelector('.scrolltext').classList.toggle('activescroll')
+// })
 
-projects.addEventListener("click", () =>{
-    // window.location.href = "/index.html#projectscroll"
-    logo.classList.toggle('active')
+// projects.addEventListener("click", () =>{
+//     // window.location.href = "/index.html#projectscroll"
+//     logo.classList.toggle('active')
 
-    container.classList.toggle("active")
-    document.querySelector('body').classList.toggle('open')
-    document.querySelector('.scrolltext').classList.toggle('activescroll')
-
-
-
-})
-contact.addEventListener("click", () =>{
-    // window.location.href = "/index.html#cont"
-    logo.classList.toggle('active')
-
-    container.classList.toggle("active")
-    document.querySelector('body').classList.toggle('open')
-    document.querySelector('.scrolltext').classList.toggle('activescroll')
+//     container.classList.toggle("active")
+//     document.querySelector('body').classList.toggle('open')
+//     document.querySelector('.scrolltext').classList.toggle('activescroll')
 
 
 
-})
-skills.addEventListener("click", () =>{
-    // window.location.href = "/index.html#mh-skills"
-    logo.classList.toggle('active')
+// })
+// contact.addEventListener("click", () =>{
+//     // window.location.href = "/index.html#cont"
+//     logo.classList.toggle('active')
 
-    container.classList.toggle("active")
-    document.querySelector('body').classList.toggle('open')
-    document.querySelector('.scrolltext').classList.toggle('activescroll')
+//     container.classList.toggle("active")
+//     document.querySelector('body').classList.toggle('open')
+//     document.querySelector('.scrolltext').classList.toggle('activescroll')
 
 
 
-})
+// })
+// skills.addEventListener("click", () =>{
+//     // window.location.href = "/index.html#mh-skills"
+//     logo.classList.toggle('active')
 
+//     container.classList.toggle("active")
+//     document.querySelector('body').classList.toggle('open')
+//     document.querySelector('.scrolltext').classList.toggle('activescroll')
+
+
+
+// })
+
+
+const selectElement = (selector) => document.querySelector(selector);
+const toggleClasses = () => {
+    container.classList.toggle("active");
+    logo.classList.toggle('active');
+    document.querySelector('body').classList.toggle('open');
+    document.querySelector('.scrolltext').classList.toggle('activescroll');
+};
+
+const hamburger_menu = selectElement(".hamburger-menu");
+const container = selectElement(".container");
+const projects = selectElement('#projects');
+const contact = selectElement('#contact');
+const skills = selectElement('#skills');
+const logo = selectElement('.logo');
+
+hamburger_menu.addEventListener("click", toggleClasses);
+projects.addEventListener("click", toggleClasses);
+contact.addEventListener("click", toggleClasses);
+skills.addEventListener("click", toggleClasses);
 
 
 
