@@ -31,7 +31,7 @@ body::-webkit-scrollbar {
   min-height: 100vh;
   width: 100%;
   background-color: #485461;
-  background-image: url("https://cdn.discordapp.com/attachments/1008571088919343124/1034067029034016768/Fome_darkish_teal_void_14368e1e-566f-42c5-b1a1-11ab433e54e8.webp");
+  background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);;
   /* background-image: linear-gradient(135deg, #485461 0%, #28313b 74%); */
   overflow-x: hidden;
   background-attachment: fixed;
@@ -66,9 +66,21 @@ body::-webkit-scrollbar {
   letter-spacing: 2px;
   line-height: 4rem;
   z-index: 100;
-  /* transition: 1s;  */
+  -webkit-transition: all 1s linear;
+    -moz-transition: all 1s linear;
+    -o-transition: all 1s linear;
+    transition: all 1s linear;
 }
 
+.logo.active{
+  margin-top: 58rem;
+  margin-left: 1rem;
+  position: absolute;
+  height: 100vh;
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  
+}
 .sticky {
   writing-mode: vertical-rl;
   text-orientation: upright;
@@ -80,11 +92,6 @@ body::-webkit-scrollbar {
 .logo span {
   font-weight: 300;
 }
-/* .logo.disabled{
-    margin-top: 150px;
-    writing-mode: vertical-rl;
-    text-orientation: upright;
-} */
 
 .hamburger-menu {
   height: 4rem;

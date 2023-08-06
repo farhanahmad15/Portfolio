@@ -3,14 +3,18 @@ const container = document.querySelector(".container")
 const projects = document.getElementById('projects')
 const contact = document.getElementById('contact')
 const skills = document.getElementById('skills')
+const logo = document.querySelector('.logo')
 hamburger_menu.addEventListener("click", () =>{
     container.classList.toggle("active")
+    logo.classList.toggle('active')
     document.querySelector('body').classList.toggle('open')
     document.querySelector('.scrolltext').classList.toggle('activescroll')
 })
 
 projects.addEventListener("click", () =>{
-    window.location.href = "/index.html#projectscroll"
+    // window.location.href = "/index.html#projectscroll"
+    logo.classList.toggle('active')
+
     container.classList.toggle("active")
     document.querySelector('body').classList.toggle('open')
     document.querySelector('.scrolltext').classList.toggle('activescroll')
@@ -19,7 +23,9 @@ projects.addEventListener("click", () =>{
 
 })
 contact.addEventListener("click", () =>{
-    window.location.href = "/index.html#cont"
+    // window.location.href = "/index.html#cont"
+    logo.classList.toggle('active')
+
     container.classList.toggle("active")
     document.querySelector('body').classList.toggle('open')
     document.querySelector('.scrolltext').classList.toggle('activescroll')
@@ -28,7 +34,9 @@ contact.addEventListener("click", () =>{
 
 })
 skills.addEventListener("click", () =>{
-    window.location.href = "/index.html#mh-skills"
+    // window.location.href = "/index.html#mh-skills"
+    logo.classList.toggle('active')
+
     container.classList.toggle("active")
     document.querySelector('body').classList.toggle('open')
     document.querySelector('.scrolltext').classList.toggle('activescroll')
