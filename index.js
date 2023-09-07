@@ -188,3 +188,21 @@ document.getElementById('amogus').onclick = function(){
     document.querySelector('.amoguss').style.display = 'none'
   }
 }
+
+// Define your color palette as an array of color values
+const colorPalette = ['#000000', '#6a040f', '#ee9b00', '#ca6702', '#bb3e03', '#ae2012', '#9b2226'];
+
+const element = document.getElementById('amogus');
+const text = element.textContent;
+const originalColors = [];
+
+// Create a new HTML string with random colors from your palette for each letter
+const coloredText = Array.from(text).map((letter, index) => {
+    const colorIndex = Math.floor(Math.random() * colorPalette.length);
+    const color = colorPalette[colorIndex];
+    originalColors.push(getComputedStyle(element).color);
+    return `<span style="color: ${color};">${letter}</span>`;
+}).join('');
+
+element.innerHTML = coloredText;
+
