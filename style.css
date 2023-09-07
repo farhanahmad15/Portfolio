@@ -509,6 +509,7 @@ hr {
 }
 
 .contact {
+  
   display: flex;
   align-items: center;
   justify-content: center;
@@ -518,6 +519,9 @@ hr {
   background-attachment: fixed;
   transform-style: preserve-3d;
   /* width: 100%; */
+}
+.glass-box{
+  margin-bottom: 20px;
 }
 .mobilecontact {
   display: none;
@@ -706,4 +710,11 @@ a {
   100% {
     transform: translate(0, 0);
   }
+}
+
+.f{
+  color: #ffbe0b;
+}
+.a{
+  color: #d90429;
 }
