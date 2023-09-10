@@ -52,6 +52,8 @@ const toggleClasses = () => {
     logo.classList.toggle('active');
     document.querySelector('body').classList.toggle('open');
     document.querySelector('.scrolltext').classList.toggle('activescroll');
+    document.querySelector('body').style.overflowX = (document.querySelector('body').style.overflowX === 'scroll') ? 'hidden' : 'scroll';
+
 };
 
 const hamburger_menu = selectElement(".hamburger-menu");
