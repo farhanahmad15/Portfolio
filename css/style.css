@@ -140,7 +140,7 @@ body::-webkit-scrollbar {
 }
 header {
   min-height: 100vh;
-  background: url(bg.webp) no-repeat top center / cover;
+  background: url(../images/bg.webp) no-repeat top center / cover;
   background-attachment: fixed;
   position: relative;
 }
@@ -322,7 +322,7 @@ ul {
 
 .second {
   min-height: 250vh;
-  background: url(bg.webp) no-repeat top center / cover;
+  background: url(../images/bg.webp) no-repeat top center / cover;
   background-blend-mode: multiply;
   /* background-color: rgba(43, 51, 59, 0.322); */
   background-attachment: fixed;
@@ -362,7 +362,7 @@ ul {
 }
 
 footer {
-  background: url(bg.webp) no-repeat top center / cover;
+  background: url(../images/bg.webp) no-repeat top center / cover;
   background-blend-mode: multiply;
   /* background-color: rgba(43, 51, 59, 0.322); */
   background-attachment: fixed;
@@ -390,7 +390,7 @@ hr {
   width: 100%;
 }
 .mh-skills {
-  background: url(bg.webp) no-repeat top center / cover;
+  background: url(../images/bg.webp) no-repeat top center / cover;
   background-blend-mode: multiply;
   /* background-color: rgba(43, 51, 59, 0.322); */
   background-attachment: fixed;
@@ -513,13 +513,14 @@ hr {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: url(bg.webp) no-repeat top center / cover;
+  background: url(../images/bg.webp) no-repeat top center / cover;
   background-blend-mode: multiply;
   /* background-color: rgba(43, 51, 59, 0.322); */
   background-attachment: fixed;
   transform-style: preserve-3d;
   /* width: 100%; */
 }
+
 .glass-box{
   margin-bottom: 20px;
 }
@@ -547,7 +548,7 @@ hr {
   }
   .mobilewarn {
     display: block;
-    background: url(bg.webp) no-repeat top center / cover;
+    background: url(../images/bg.webp) no-repeat top center / cover;
     background-blend-mode: multiply;
     /* background-color: rgba(43, 51, 59, 0.322); */
     background-attachment: fixed;
@@ -558,7 +559,7 @@ hr {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: url(bg.webp) no-repeat top center / cover;
+    background: url(../images/bg.webp) no-repeat top center / cover;
     background-blend-mode: multiply;
     /* background-color: rgba(43, 51, 59, 0.322); */
     background-attachment: fixed;
@@ -712,3 +713,6 @@ a {
   }
 }
 
+input[type="text"], input[type="password"], textarea, select { 
+  outline: none;
+}
