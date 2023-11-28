@@ -35,24 +35,25 @@
   background-position: center;
   background-size: cover;
   background-repeat: none;
-  transition: flex 0.8s ease;
+  transition: all 0.8s ease;
   border-radius: 10px;
 }
 .item:hover {
   flex: 7;
+  border: 0.25rem solid black;
 }
 .item-1 {
-  background-image: url("https://dummyimage.com/500x500");
+  background-image: url("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fbloximages.chicago2.vip.townnews.com%2Fnapavalleyregister.com%2Fcontent%2Ftncms%2Fassets%2Fv3%2Feditorial%2F8%2Fee%2F8eeedf0c-4d7e-582f-a87e-763f3555e0a2%2F5d02743ae2024.image.jpg%3Fresize%3D1200%252C800&f=1&nofb=1&ipt=0c4bb0c4c3df951c0ba364a8204355b4a7518a298ffad77ef4b39b47f62fe687&ipo=images");
 }
 .item-2 {
-  background-image: url("https://dummyimage.com/500x500");
+  background-image: url("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fmedia.distractify.com%2Fbrand-img%2FXotA6v_-6%2F1440x754%2Ffacebooklogo-1661871849012.jpg&f=1&nofb=1&ipt=d50e6e22b1b27062b8e14bc3ab633a3526710244a79457831ae48db036108201&ipo=images");
 }
 .item-3 {
-  background-image: url("https://dummyimage.com/500x500");
+  background-image: url("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.redd.it%2F7btcvkl8pdh31.jpg&f=1&nofb=1&ipt=5587fd5db8eed7479b7316db3a9192d2457a82469616c273e6d3b858e8683923&ipo=images");
 }
 .item-4 {
-  background-image: url("https://dummyimage.com/500x500");
+  background-image: url("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fjacobsmedia.com%2Fwp-content%2Fuploads%2F2020%2F05%2Ftwitterr-headquarters-istock-1024x683.jpg&f=1&nofb=1&ipt=1a739eacc973bcf8c31f7bd3732b459d4633c6957c729e9d5a79d60ddcc3b641&ipo=images");
 }
 .item-5 {
-  background-image: url("https://dummyimage.com/500x500");
+  background-image: url("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fdatasemantics.co%2Fwp-content%2Fuploads%2F2021%2F04%2FHow-chatbots-can-transform-IT-helpdesk-roles-and-responsibilities.jpg&f=1&nofb=1&ipt=f4b342f5fc9f5c0854d14d951c10a08e432d5338b423fe596cc98027bb462657&ipo=images");
 }

@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <script>
+      window.addEventListener("resize", function () {
+        if (window.innerWidth <= 900) {
+          window.location.href = "mobile.html";
+        }
+      });
+    </script>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,7 +16,10 @@
       name="Keywords"
       content="Farhan, Ahmad, Farhan Ahamad, Farhan Ahmad Portfolio"
     />
-    <meta name="Description" content="As a self-taught developer with 5000+ hours of experience, I specialize in creating Discord bots, Responsive Sites using various JavaScript Frameworks and Video Editing. My passion lies in building innovative and practical applications. I am a dedicated learner, always eager to explore new technologies and enhance my skills. Despite my age, I am committed to achieving excellence in the field of technology. " />
+    <meta
+      name="Description"
+      content="As a self-taught developer with 5000+ hours of experience, I specialize in creating Discord bots, Responsive Sites using various JavaScript Frameworks and Video Editing. My passion lies in building innovative and practical applications. I am a dedicated learner, always eager to explore new technologies and enhance my skills. Despite my age, I am committed to achieving excellence in the field of technology. "
+    />
     <meta name="Subject" content="Portfolio" />
     <meta name="Language" content="English" />
 
@@ -19,7 +29,10 @@
       content="https://farhanahmad15.github.io/Portfolio/"
     />
     <meta property="og:title" content="Farhan Ahmad" />
-    <meta property="og:description" content="As a self-taught developer with 5000+ hours of experience, I specialize in creating Discord bots, Responsive Sites using various JavaScript Frameworks and Video Editing. My passion lies in building innovative and practical applications. I am a dedicated learner, always eager to explore new technologies and enhance my skills. Despite my age, I am committed to achieving excellence in the field of technology." />
+    <meta
+      property="og:description"
+      content="As a self-taught developer with 5000+ hours of experience, I specialize in creating Discord bots, Responsive Sites using various JavaScript Frameworks and Video Editing. My passion lies in building innovative and practical applications. I am a dedicated learner, always eager to explore new technologies and enhance my skills. Despite my age, I am committed to achieving excellence in the field of technology."
+    />
     <meta
       property="og:image"
       content="https://farhanahmad15.github.io/Portfolio/images/photo.png"
@@ -32,7 +45,10 @@
       content="https://farhanahmad15.github.io/Portfolio/"
     />
     <meta property="twitter:title" content="Farhan Ahmad" />
-    <meta property="twitter:description" content="As a self-taught developer with 5000+ hours of experience, I specialize in creating Discord bots, Responsive Sites using various JavaScript Frameworks and Video Editing. My passion lies in building innovative and practical applications. I am a dedicated learner, always eager to explore new technologies and enhance my skills. Despite my age, I am committed to achieving excellence in the field of technology." />
+    <meta
+      property="twitter:description"
+      content="As a self-taught developer with 5000+ hours of experience, I specialize in creating Discord bots, Responsive Sites using various JavaScript Frameworks and Video Editing. My passion lies in building innovative and practical applications. I am a dedicated learner, always eager to explore new technologies and enhance my skills. Despite my age, I am committed to achieving excellence in the field of technology."
+    />
     <meta
       property="twitter:image"
       content="https://farhanahmad15.github.io/Portfolio/photo.png"
@@ -84,7 +100,13 @@
                 </h1>
 
                 <h4 data-aos="fade-left" data-aos-duration="1500" id="works">
-                  As a self-taught developer with 5000+ hours of experience, I specialize in creating Discord bots, Responsive Sites using various JavaScript Frameworks and Video Editing. My passion lies in building innovative and practical applications. I am a dedicated learner, always eager to explore new technologies and enhance my skills. Despite my age, I am committed to achieving excellence in the field of technology.
+                  As a self-taught developer with 5000+ hours of experience, I
+                  specialize in creating Discord bots, Responsive Sites using
+                  various JavaScript Frameworks and Video Editing. My passion
+                  lies in building innovative and practical applications. I am a
+                  dedicated learner, always eager to explore new technologies
+                  and enhance my skills. Despite my age, I am committed to
+                  achieving excellence in the field of technology.
                 </h4>
                 <br />
                 <a
@@ -284,5 +306,23 @@
       offset: 100,
     });
   </script>
-  
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      // Loop over the entries
+      entries.forEach((entry) => {
+        // If the element is visible
+        if (entry.isIntersecting) {
+          // Add the animation class
+          entry.target.classList.add("percentageem-toggled");
+          return;
+        }
+        entry.target.classList.remove("percentageem-toggled");
+        
+
+      });
+    });
+    const bars = document.querySelectorAll("div.percentagem")
+    // Tell the observer which elements to track
+    bars.forEach(bar => observer.observe(bar))
+  </script>
 </html>

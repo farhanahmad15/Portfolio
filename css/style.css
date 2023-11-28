@@ -31,7 +31,7 @@ body::-webkit-scrollbar {
   min-height: 100vh;
   width: 100%;
   background-color: #485461;
-  background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);;
+  background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
   /* background-image: linear-gradient(135deg, #485461 0%, #28313b 74%); */
   overflow-x: hidden;
   background-attachment: fixed;
@@ -67,19 +67,18 @@ body::-webkit-scrollbar {
   line-height: 4rem;
   z-index: 100;
   -webkit-transition: all 1s linear;
-    -moz-transition: all 1s linear;
-    -o-transition: all 1s linear;
-    transition: all 1s linear;
+  -moz-transition: all 1s linear;
+  -o-transition: all 1s linear;
+  transition: all 1s linear;
 }
 
-.logo.active{
+.logo.active {
   margin-top: 58rem;
   margin-left: 1rem;
   position: absolute;
   height: 100vh;
   writing-mode: vertical-rl;
   text-orientation: upright;
-  
 }
 .sticky {
   writing-mode: vertical-rl;
@@ -496,20 +495,21 @@ hr {
   background: #fff;
   transition: 3s all;
   animation-duration: 5s;
-  animation-name: animationProgress;
   font-family: "Poppins", sans-serif;
 }
-.precentual {
-  animation-name: animationprogress;
+.percentageem-toggled {
+  animation-name: animationProgress;
 }
+/* .precentual {
+  animation-name: animationprogress;
+} */
 @keyframes animationProgress {
   from {
-    width: 0;
+    width: 30%;
   }
 }
 
 .contact {
-  
   display: flex;
   align-items: center;
   justify-content: center;
@@ -521,7 +521,7 @@ hr {
   /* width: 100%; */
 }
 
-.glass-box{
+.glass-box {
   margin-bottom: 20px;
 }
 .mobilecontact {
@@ -553,7 +553,7 @@ hr {
     /* background-color: rgba(43, 51, 59, 0.322); */
     background-attachment: fixed;
     transform-style: preserve-3d;
-    color: #072745;
+    color: #ade8f4;
   }
   .mobilecontact {
     display: flex;
@@ -568,22 +568,25 @@ hr {
   }
   .mobilecontact button {
     text-decoration: none;
+    all: unset;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     color: black;
     width: 7rem;
     height: 3rem;
     font-weight: bold;
     font-size: 1rem;
-    background-color: #5dbbb3;
+    background-color: #219ebc;
     border: none;
     border-radius: 10px;
-    transition:  all 0.5s;
+    transition: all 0.5s;
   }
   .mobilecontact button:hover {
     text-decoration: none;
     color: white;
-    background-color: #2a61ae;
+    background-color: #023047;
     cursor: pointer;
-  
   }
 }
 
@@ -628,6 +631,9 @@ hr {
   font-weight: bolder;
   border: none;
   border-radius: 3rem;
+}
+#submitButton:hover {
+  cursor: pointer;
 }
 
 a {
@@ -713,6 +719,9 @@ a {
   }
 }
 
-input[type="text"], input[type="password"], textarea, select { 
+input[type="text"],
+input[type="password"],
+textarea,
+select {
   outline: none;
 }
