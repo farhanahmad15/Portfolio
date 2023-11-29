@@ -163,8 +163,8 @@ section img#mountains_front {
   }
   header ul li {
     margin-inline: auto;
-
-    margin: 10px;
+    font-size: 0.8rem;
+    /* margin: 10px; */
   }
   .sec{
     padding: 30px;
