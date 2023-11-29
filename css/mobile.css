@@ -27,7 +27,7 @@ header .logo {
   color: #fff;
   font-weight: 700;
   text-decoration: none;
-  font-size: 2em;
+  font-size: 2rem;
   text-transform: uppercase;
   letter-spacing: 2px;
 }
@@ -72,7 +72,7 @@ header ul li a.active {
   border-radius: 40px;
   background: #fff;
   color: #2b1055;
-  font-size: 1.5em;
+  font-size: 1.5rem;
   /* transform: translateY(-100px); */
   /* transition: all 0.25s; */
   z-index: 9;
@@ -135,16 +135,16 @@ section img#mountains_front {
 
 }
 .sec h2 {
-  font-size: 3.5em;
+  font-size: 3rem;
   margin-bottom: 10px;
   color: #fff;
 }
 .sec p {
-  font-size: 1.25909em;
+  font-size: 1.25rem;
   color: #fff;
 }
 #pappi {
-  font-size: 1.25em;
+  font-size: 1.25rem;
   color: #fff;
   text-decoration: none;
 }
@@ -169,4 +169,11 @@ section img#mountains_front {
   .sec{
     padding: 30px;
   }
+}
+footer{
+  width: 100%;
+  background:#1c0522;
+  color: white;
+  font-size: 0.8rem;
+  text-align: center;
 }

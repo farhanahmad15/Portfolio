@@ -407,7 +407,7 @@ hr {
   margin-left: 30px;
 }
 .mh-skills .mh-professional-skill h3 {
-  font-size: 30px;
+  font-size: 1.875rem;
   line-height: 40px;
   text-align: center;
   font-weight: 400;
@@ -462,7 +462,7 @@ hr {
   position: absolute;
   top: 0;
   left: 0;
-  font-size: 15px;
+  font-size: 1rem;
   font-weight: 600;
   opacity: 0.9;
   font-family: "Poppins", sans-serif;
@@ -472,7 +472,7 @@ hr {
   position: absolute;
   top: 0;
   right: 0;
-  font-size: 14px;
+  font-size: 0.9rem;
   font-weight: normal;
 }
 .candidatos .parcial .progressBar {
@@ -594,7 +594,7 @@ hr {
   display: block;
 }
 #subject {
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: bold;
   color: black;
   height: 4rem;
@@ -608,7 +608,7 @@ hr {
 }
 
 #message {
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: bold;
   color: black;
   margin-top: 20px;
@@ -627,7 +627,7 @@ hr {
   margin: 5px;
   background-color: rgba(8, 157, 180);
   color: black;
-  font-size: 14px;
+  font-size: 0.9rem;
   font-weight: bolder;
   border: none;
   border-radius: 3rem;
