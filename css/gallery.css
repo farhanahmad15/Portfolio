@@ -28,6 +28,8 @@
   flex-direction: row;
   width: 100%;
   height: 70vh;
+  border: 5px solid #065F6A;
+  border-radius: 10px;
 }
 .item {
   flex: 1;
@@ -36,11 +38,19 @@
   background-size: cover;
   background-repeat: none;
   transition: all 0.8s ease;
-  border-radius: 10px;
+}
+:nth-child(1 of .item) {
+    border-radius: 10px 0 0 10px;
+}
+
+/* target last element with class ".circle" */
+:nth-last-child(1 of .item) {
+    border-radius: 0 10px 10px 0;
+    
 }
 .item:hover {
   flex: 7;
-  border: 0.25rem solid black;
+  border: 0.2rem solid #086b78;
 }
 .item-1 {
   background-image: url("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fbloximages.chicago2.vip.townnews.com%2Fnapavalleyregister.com%2Fcontent%2Ftncms%2Fassets%2Fv3%2Feditorial%2F8%2Fee%2F8eeedf0c-4d7e-582f-a87e-763f3555e0a2%2F5d02743ae2024.image.jpg%3Fresize%3D1200%252C800&f=1&nofb=1&ipt=0c4bb0c4c3df951c0ba364a8204355b4a7518a298ffad77ef4b39b47f62fe687&ipo=images");
