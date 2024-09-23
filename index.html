@@ -48,7 +48,20 @@
     />
 
     <title>Farhan Ahmad</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
+    <!-- Load the Poppins font -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Load the IBM Plex Sans Thai Looped font
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai+Looped:wght@100;200;300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    /> -->
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="./css/style.css" />
     <link rel="stylesheet" href="css/gallery.css" />
@@ -95,10 +108,10 @@
                 <h4 data-aos="fade-left" data-aos-duration="1500" id="works">
                   As a self-taught developer with 5555+ hours of experience, I
                   specialize in creating Discord bots, Responsive Sites using
-                  Next.js and Video Editing. My passion
-                  lies in building innovative and practical applications. I am a
-                  dedicated learner. Despite my age, I am committed to
-                  achieving excellence in the field of technology.
+                  Next.js and Video Editing. My passion lies in building
+                  innovative and practical applications. I am a dedicated
+                  learner. Despite my age, I am committed to achieving
+                  excellence in the field of technology.
                 </h4>
                 <br />
                 <a
@@ -309,12 +322,10 @@
           return;
         }
         entry.target.classList.remove("percentageem-toggled");
-        
-
       });
     });
-    const bars = document.querySelectorAll("div.percentagem")
+    const bars = document.querySelectorAll("div.percentagem");
     // Tell the observer which elements to track
-    bars.forEach(bar => observer.observe(bar))
+    bars.forEach((bar) => observer.observe(bar));
   </script>
 </html>
