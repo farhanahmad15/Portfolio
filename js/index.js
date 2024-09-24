@@ -178,7 +178,9 @@ document.getElementById("h1").onmouseover = event => {
 
 window.onload = function(){
   const loader = document.querySelector("#loader");
-    loader.style.display = "none"; // hide loader once page is loaded 
+  const loader_container = document.querySelector(".loader-container");
+  loader.style.display = "none"; // hide loader once page is loaded 
+  loader_container.style.display = "none";
 }
 
 
