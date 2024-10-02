@@ -390,7 +390,7 @@ footer {
 }
 .candidates {
   position: relative;
-  margin-bottom: 15px;
+  margin-bottom: 50px;
   font-family: "Poppins", sans-serif;
 }
 .candidates .partial {
@@ -399,19 +399,25 @@ footer {
   vertical-align: middle;
 }
 .candidates .partial .info {
+  /* margin: 15px; */
   position: relative;
   font-family: "Poppins", sans-serif;
 }
 .candidates .partial .info .name {
   position: absolute;
-  top: 0;
+  top: -30px;
   left: 0;
+
   font-size: 1rem;
   font-weight: 600;
   opacity: 0.9;
   font-family: "Poppins", sans-serif;
 }
-
+.candidates .partial .info .zero{
+  position: absolute;
+  left: 0;
+  top: 0;
+}
 .candidates .partial .info .percentage-num {
   position: absolute;
   top: 0;
