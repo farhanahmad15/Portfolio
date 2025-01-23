@@ -367,7 +367,7 @@ footer {
 }
 
 @media only screen and (max-width: 1150px) {
-  .daddy {
+  .gallery-holder {
     display: none;
   }
   .contact {
