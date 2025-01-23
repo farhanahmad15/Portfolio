@@ -249,7 +249,10 @@ ul {
   }
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 1150px) {
+  body{
+    height: 100vh;
+  }
   .hamburger-menu {
     display: none;
   }
