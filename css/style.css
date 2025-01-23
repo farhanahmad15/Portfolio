@@ -334,124 +334,6 @@ footer {
   position: relative;
   height: 2rem;
 }
-.my-skills {
-  background: url(../images/bg.webp) no-repeat top center / cover;
-  background-blend-mode: multiply;
-  background-attachment: fixed;
-  transform-style: preserve-3d;
-  position: relative;
-}
-.container2 {
-  height: 75vh;
-}
-
-.my-skills .my-professional-skill {
-  padding-right: 60px;
-  color: white;
-  margin-left: 30px;
-}
-.my-skills .my-professional-skill h3 {
-  font-size: 1.875rem;
-  line-height: 40px;
-  text-align: center;
-  font-weight: 400;
-  margin-bottom: 60px;
-  font-family: "Poppins", sans-serif;
-  color: black;
-  font-weight: bold;
-}
-.my-progress .progressbar-text {
-  color: inherit !important;
-  font-family: "Poppins", sans-serif;
-}
-.progress.progress-line {
-  height: 10px;
-  margin-right: 60px;
-}
-.progress.progress-line .progressbar-text {
-  position: absolute;
-  top: 50%;
-  left: 100%;
-  width: 60px;
-  transform: translateY(-35%);
-  text-align: center;
-  font-family: "Poppins", sans-serif;
-}
-.my-progress.my-progress-circle {
-  display: inline-block;
-  width: 100px;
-  height: 100px;
-}
-.my-progress path:nth-child(1) {
-  stroke: rgba(0, 0, 0, 0.7);
-}
-.my-progress path:nth-child(1) {
-  stroke: #0bceaf !important;
-}
-.candidates {
-  position: relative;
-  margin-bottom: 50px;
-  font-family: "Poppins", sans-serif;
-}
-.candidates .partial {
-  display: inline-block;
-  width: 100%;
-  vertical-align: middle;
-}
-.candidates .partial .info {
-  /* margin: 15px; */
-  position: relative;
-  font-family: "Poppins", sans-serif;
-}
-.candidates .partial .info .name {
-  position: absolute;
-  top: -30px;
-  left: 0;
-
-  font-size: 1rem;
-  font-weight: 600;
-  opacity: 0.9;
-  font-family: "Poppins", sans-serif;
-}
-.candidates .partial .info .zero{
-  position: absolute;
-  left: 0;
-  top: 0;
-}
-.candidates .partial .info .percentage-num {
-  position: absolute;
-  top: 0;
-  right: 0;
-  font-size: 0.9rem;
-  font-weight: normal;
-}
-.candidates .partial .progressBar {
-  position: relative;
-  width: 100%;
-  height: 7px;
-  margin: 30px 0 2px;
-  border-radius: 10px;
-  background: rgba(0, 0, 0, 0.5);
-}
-.candidates .partial .percentagem {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 7px;
-  border-radius: 10px;
-  background: #fff;
-  transition: 3s all;
-  animation-duration: 5s;
-  font-family: "Poppins", sans-serif;
-}
-.percentageem-toggled {
-  animation-name: animationProgress;
-}
-@keyframes animationProgress {
-  from {
-    width: 30%;
-  }
-}
 
 .contact {
   display: flex;
@@ -465,6 +347,9 @@ footer {
 
 .glass-box {
   margin-bottom: 20px;
+}
+.glass-box h2{
+  margin: 0 0 5px 0;
 }
 .mobilecontact {
   display: none;
@@ -545,6 +430,10 @@ footer {
   border-radius: 10px;
   background-color: rgba(119, 227, 247, 0.5);
 }
+#subject::placeholder{
+  opacity: 1;
+  color: rgba(0, 0, 0, 0.511);
+}
 
 #message {
   font-size: 1rem;
@@ -558,11 +447,15 @@ footer {
   border-radius: 10px;
   background-color: rgba(119, 227, 247, 0.5);
 }
+#message::placeholder{
+  opacity: 1;
+  color: rgba(0, 0, 0, 0.511);
+}
 #submitButton,
 #closeButton {
   width: 7rem;
   height: 3rem;
-  margin: 5px;
+  margin: 7px 0 0 0;
   background-color: rgba(8, 157, 180);
   color: black;
   font-size: 0.9rem;

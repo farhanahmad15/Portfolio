@@ -53,17 +53,17 @@
   border: 0.2rem solid #086b78;
 }
 .item-1 {
-  background-image: url("../images/facebook.webp");
-}
-.item-2 {
-  background-image: url("../images/global.webp");
-}
-.item-3 {
-  background-image: url("../images/global_result.webp");
-}
-.item-4 {
   background-image: url("../images/discord.webp");
 }
-.item-5 {
+.item-2 {
   background-image: url("../images/bam.webp");
+}
+.item-3 {
+  background-image: url("../images/global.webp");
+}
+.item-4 {
+  background-image: url("../images/global_result.webp");
+}
+.item-5 {
+  background-image: url("../images/facebook.webp");
 }
