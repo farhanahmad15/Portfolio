@@ -11,9 +11,12 @@ html {
 body {
   font-family: "Poppins", sans-serif;
   overflow-x: hidden;
-  height: 200vh;
+  min-height: 100vh;
   -ms-overflow-style: none;
   scrollbar-width: none;
+  background: url(../images/bg.webp) no-repeat top center / cover;
+  background-attachment: fixed;
+  background-size: cover;
 }
 
 *::-webkit-scrollbar {
@@ -250,7 +253,7 @@ ul {
 }
 
 @media only screen and (max-width: 1150px) {
-  body{
+  body {
     height: 100vh;
   }
   .hamburger-menu {
@@ -330,10 +333,7 @@ ul {
 }
 
 footer {
-  background: url(../images/bg.webp) no-repeat top center / cover;
-  background-blend-mode: multiply;
-  background-attachment: fixed;
-  transform-style: preserve-3d;
+  background: transparent;
   position: relative;
   height: 2rem;
 }
@@ -342,16 +342,14 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: url(../images/bg.webp) no-repeat top center / cover;
-  background-blend-mode: multiply;
-  background-attachment: fixed;
-  transform-style: preserve-3d;
+  background: transparent;
+  padding: 4rem 0;
 }
 
 .glass-box {
   margin-bottom: 20px;
 }
-.glass-box h2{
+.glass-box h2 {
   margin: 0 0 5px 0;
 }
 .mobilecontact {
@@ -377,22 +375,53 @@ footer {
     display: none;
   }
   .mobilewarn {
-    display: block;
-    background: url(../images/bg.webp) no-repeat top center / cover;
-    background-blend-mode: multiply;
-    background-attachment: fixed;
-    transform-style: preserve-3d;
-    color: #ade8f4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 60vh;
+    padding: 2rem;
+    background: transparent;
+  }
+  
+  .mobilewarn-content {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 2.5rem 2rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 500px;
+    border: 2px solid rgba(6, 95, 106, 0.3);
+  }
+  
+  .mobilewarn-content h2 {
+    color: #065F6A;
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  .mobilewarn-content p {
+    color: #333;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 0.8rem;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  .mobilewarn-content p:last-child {
+    margin-bottom: 0;
+    font-weight: 500;
+    color: #065F6A;
   }
   .mobilecontact {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: url(../images/bg.webp) no-repeat top center / cover;
-    background-blend-mode: multiply;
-    background-attachment: fixed;
-    transform-style: preserve-3d;
+    background: transparent;
     height: 10rem;
+    padding: 2rem 0;
   }
   .mobilecontact button {
     text-decoration: none;
@@ -433,7 +462,7 @@ footer {
   border-radius: 10px;
   background-color: rgba(119, 227, 247, 0.5);
 }
-#subject::placeholder{
+#subject::placeholder {
   opacity: 1;
   color: rgba(0, 0, 0, 0.511);
 }
@@ -450,7 +479,7 @@ footer {
   border-radius: 10px;
   background-color: rgba(119, 227, 247, 0.5);
 }
-#message::placeholder{
+#message::placeholder {
   opacity: 1;
   color: rgba(0, 0, 0, 0.511);
 }

@@ -1,9 +1,6 @@
 .gallery-holder {
-  background: url(../images/bg.webp) no-repeat top center / cover;
-  background-blend-mode: multiply;
-  /* background-color: rgba(43, 51, 59, 0.322); */
-  background-attachment: fixed;
-  transform-style: preserve-3d;
+  background: transparent;
+  padding: 2rem 0;
 }
 
 .container3 {
@@ -76,17 +73,14 @@
   border: 0.2rem solid #086b78;
 }
 .item-1 {
-  background-image: url("../images/discord.webp");
-}
-.item-2 {
-  background-image: url("../images/bam.webp");
-}
-.item-3 {
   background-image: url("../images/global.webp");
 }
-.item-4 {
+.item-2 {
   background-image: url("../images/global_result.webp");
 }
-.item-5 {
-  background-image: url("../images/facebook.webp");
+.item-3 {
+  background-image: url("../images/discord.webp");
+}
+.item-4 {
+  background-image: url("../images/bam.webp");
 }
