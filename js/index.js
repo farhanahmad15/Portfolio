@@ -126,7 +126,7 @@ submitButton.addEventListener("click", function() {
     // Get the value of the input box
     var subjectVal = subject.value;
     var messageVal = message.value;
-    var link = `mailto:nahrafswebsite@gmail.com?subject=${encodeURIComponent(subjectVal)}&body=${encodeURIComponent(messageVal)}`
+    var link = `mailto:thefarhan@duck.com?subject=${encodeURIComponent(subjectVal)}&body=${encodeURIComponent(messageVal)}`
     window.open(link)
 
     // Log the input value to the console
