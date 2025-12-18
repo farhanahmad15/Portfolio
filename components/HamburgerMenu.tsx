@@ -1,31 +1,26 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import Link from 'next/link';
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import Link from "next/link";
 
 export function HamburgerMenu() {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
-    if (!isOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'auto';
-    }
   };
 
   const handleLinkClick = () => {
     setIsOpen(false);
-    document.body.style.overflow = 'auto';
+    document.body.style.overflow = "auto";
   };
 
   const menuItems = [
-    { href: 'https://github.com/farhanahmad15', label: 'Github' },
-    { href: '#projects', label: 'Projects' },
-    { href: '#skills', label: 'Skills' },
-    { href: '#contact', label: 'Contact' },
+    { href: "https://github.com/farhanahmad15", label: "Github" },
+    { href: "#projects", label: "Projects" },
+    { href: "#skills", label: "Skills" },
+    { href: "#contact", label: "Contact" },
   ];
 
   return (
@@ -40,7 +35,7 @@ export function HamburgerMenu() {
           className="relative w-[1.9rem] h-[1.5px] bg-white rounded-sm"
           animate={{
             rotate: isOpen ? 360 : 0,
-            backgroundColor: isOpen ? 'transparent' : '#eeeeee',
+            backgroundColor: isOpen ? "transparent" : "#eeeeee",
           }}
           transition={{ duration: 0.5 }}
         >
@@ -66,32 +61,33 @@ export function HamburgerMenu() {
       {/* Navigation Links */}
       <AnimatePresence>
         {isOpen && (
-          <motion.nav
-            className="fixed w-[30%] h-full top-0 right-0 flex justify-center items-center z-[50]"
+          <motion.div
+            className="fixed w-[30%] h-screen top-0 right-0 flex justify-center items-center z-[2]"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.3 }}
           >
             <ul className="list-none">
               {menuItems.map((item, index) => (
                 <motion.li
                   key={item.label}
                   className="text-center"
-                  initial={{ opacity: 0, x: 50 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: 50 }}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: 20 }}
                   transition={{
-                    duration: 0.5,
+                    duration: 0.3,
                     delay: index * 0.1,
+                    ease: "easeOut",
                   }}
                 >
-                  {item.href.startsWith('http') ? (
+                  {item.href.startsWith("http") ? (
                     <a
                       href={item.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="block text-white no-underline uppercase text-3xl font-bold py-8 relative hover:text-[#089099] transition-colors duration-300"
+                      className="block text-[#eee] no-underline uppercase text-base font-light tracking-wider py-3 hover:text-white transition-colors duration-300"
                       onClick={handleLinkClick}
                     >
                       {item.label}
@@ -99,7 +95,7 @@ export function HamburgerMenu() {
                   ) : (
                     <Link
                       href={item.href}
-                      className="block text-white no-underline uppercase text-3xl font-bold py-8 relative hover:text-[#089099] transition-colors duration-300"
+                      className="block text-[#eee] no-underline uppercase text-base font-light tracking-wider py-3 hover:text-white transition-colors duration-300"
                       onClick={handleLinkClick}
                     >
                       {item.label}
@@ -108,24 +104,9 @@ export function HamburgerMenu() {
                 </motion.li>
               ))}
             </ul>
-          </motion.nav>
+          </motion.div>
         )}
       </AnimatePresence>
-
-      {/* Main Content Wrapper - 3D Transform Effect */}
-      <motion.div
-        className="fixed inset-0 pointer-events-none z-[5]"
-        animate={{
-          transform: isOpen
-            ? 'perspective(1300px) rotateY(20deg) translateZ(310px) scale(0.5)'
-            : 'perspective(1300px) rotateY(0deg) translateZ(0px) scale(1)',
-        }}
-        transition={{ duration: 0.5, ease: 'easeInOut' }}
-        style={{
-          transformOrigin: 'left',
-          transformStyle: 'preserve-3d',
-        }}
-      />
     </>
   );
 }
