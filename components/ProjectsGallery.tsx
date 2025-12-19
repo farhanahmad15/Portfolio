@@ -108,11 +108,11 @@ export function ProjectsGallery() {
                         ? "0 10px 10px 0"
                         : "0"
                       : "0",
-                  transition: "all 0.8s ease",
+                  transition: "all 0.5s ease",
                 }}
                 onMouseEnter={() => setExpandedId(project.id)}
                 onMouseLeave={() => setExpandedId(null)}
-                initial={{ opacity: 0, scale: 0.8 }}
+                // initial={{ opacity: 0, scale: 0.8 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
@@ -179,11 +179,11 @@ export function ProjectsGallery() {
                         : index === projects.slice(4).length - 1
                         ? "0 10px 10px 0"
                         : "0",
-                    transition: "all 0.8s ease",
+                    transition: "all 0.5s ease",
                   }}
                   onMouseEnter={() => setExpandedId(project.id)}
                   onMouseLeave={() => setExpandedId(null)}
-                  initial={{ opacity: 0, scale: 0.8 }}
+                  // initial={{ opacity: 0, scale: 0.8 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.5, delay: (index + 4) * 0.1 }}
                   viewport={{ once: true }}

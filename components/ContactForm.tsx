@@ -26,7 +26,7 @@ export function ContactForm() {
       className="min-h-[80vh] flex items-center justify-center py-20 px-4"
     >
       <motion.div
-        className="glass-box w-full max-w-[900px] p-14 rounded-[20px] mb-5"
+        className="glass-box w-full max-w-225 p-14 rounded-4xl mb-5"
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
@@ -60,7 +60,7 @@ export function ContactForm() {
                 setFormData({ ...formData, message: e.target.value })
               }
               rows={8}
-              className="block w-full min-h-[10rem] h-48 px-5 py-4 font-medium text-[#1a1a1a] text-base border-2 border-[#065f6a]/20 rounded-xl bg-white/90 focus:border-[#065f6a] focus:bg-white focus:shadow-[0_0_0_4px_rgba(6,95,106,0.1)] focus:-translate-y-0.5 focus:outline-none transition-all resize-vertical placeholder:text-black/40 placeholder:font-normal"
+              className="block w-full min-h-40 h-48 px-5 py-4 font-medium text-[#1a1a1a] text-base border-2 border-[#065f6a]/20 rounded-xl bg-white/90 focus:border-[#065f6a] focus:bg-white focus:shadow-[0_0_0_4px_rgba(6,95,106,0.1)] focus:-translate-y-0.5 focus:outline-none transition-all resize-vertical placeholder:text-black/40 placeholder:font-normal"
               placeholder="Message"
               required
             />
@@ -68,7 +68,7 @@ export function ContactForm() {
 
           <motion.button
             type="submit"
-            className="w-full h-14 mt-8 bg-gradient-to-r from-[#065f6a] to-[#089099] text-white font-semibold text-[1.05rem] tracking-[0.5px] rounded-xl shadow-[0_4px_15px_rgba(6,95,106,0.3)] hover:-translate-y-0.5 hover:shadow-[0_6px_25px_rgba(6,95,106,0.4)] active:translate-y-0 active:shadow-[0_2px_10px_rgba(6,95,106,0.3)] transition-all duration-300 cursor-pointer relative overflow-hidden before:content-[''] before:absolute before:top-1/2 before:left-1/2 before:w-0 before:h-0 before:rounded-full before:bg-white/20 before:-translate-x-1/2 before:-translate-y-1/2 before:transition-all before:duration-600 hover:before:w-[300px] hover:before:h-[300px]"
+            className="w-full h-14 mt-8 bg-linear-to-r from-[#065f6a] to-[#089099] text-white font-semibold text-[1.05rem] tracking-[0.5px] rounded-xl shadow-[0_4px_15px_rgba(6,95,106,0.3)] hover:-translate-y-0.5 hover:shadow-[0_6px_25px_rgba(6,95,106,0.4)] active:translate-y-0 active:shadow-[0_2px_10px_rgba(6,95,106,0.3)] transition-all duration-300 cursor-pointer relative overflow-hidden before:content-[''] before:absolute before:top-1/2 before:left-1/2 before:w-0 before:h-0 before:rounded-full before:bg-white/20 before:-translate-x-1/2 before:-translate-y-1/2 before:transition-all before:duration-600 hover:before:w-75 hover:before:h-75"
             whileHover={{ scale: 1 }}
             whileTap={{ scale: 1 }}
           >
