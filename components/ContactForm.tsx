@@ -9,36 +9,15 @@ export function ContactForm() {
     subject: "",
     message: "",
   });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState<
-    "idle" | "success" | "error"
-  >("idle");
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitting(true);
-    setSubmitStatus("idle");
 
-    try {
-      const response = await fetch("/api/contact", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
+    const subject = encodeURIComponent(formData.subject);
+    const body = encodeURIComponent(formData.message);
+    const mailtoLink = `mailto:thefarhan@duck.com?subject=${subject}&body=${body}`;
 
-      if (response.ok) {
-        setSubmitStatus("success");
-        setFormData({ subject: "", message: "" });
-      } else {
-        setSubmitStatus("error");
-      }
-    } catch (error) {
-      setSubmitStatus("error");
-    } finally {
-      setIsSubmitting(false);
-    }
+    window.open(mailtoLink, "_blank");
   };
 
   return (
@@ -89,33 +68,12 @@ export function ContactForm() {
 
           <motion.button
             type="submit"
-            disabled={isSubmitting}
-            className="w-full h-14 mt-8 bg-gradient-to-r from-[#065f6a] to-[#089099] text-white font-semibold text-[1.05rem] tracking-[0.5px] rounded-xl shadow-[0_4px_15px_rgba(6,95,106,0.3)] hover:-translate-y-0.5 hover:shadow-[0_6px_25px_rgba(6,95,106,0.4)] active:translate-y-0 active:shadow-[0_2px_10px_rgba(6,95,106,0.3)] transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer relative overflow-hidden before:content-[''] before:absolute before:top-1/2 before:left-1/2 before:w-0 before:h-0 before:rounded-full before:bg-white/20 before:-translate-x-1/2 before:-translate-y-1/2 before:transition-all before:duration-600 hover:before:w-[300px] hover:before:h-[300px]"
+            className="w-full h-14 mt-8 bg-gradient-to-r from-[#065f6a] to-[#089099] text-white font-semibold text-[1.05rem] tracking-[0.5px] rounded-xl shadow-[0_4px_15px_rgba(6,95,106,0.3)] hover:-translate-y-0.5 hover:shadow-[0_6px_25px_rgba(6,95,106,0.4)] active:translate-y-0 active:shadow-[0_2px_10px_rgba(6,95,106,0.3)] transition-all duration-300 cursor-pointer relative overflow-hidden before:content-[''] before:absolute before:top-1/2 before:left-1/2 before:w-0 before:h-0 before:rounded-full before:bg-white/20 before:-translate-x-1/2 before:-translate-y-1/2 before:transition-all before:duration-600 hover:before:w-[300px] hover:before:h-[300px]"
             whileHover={{ scale: 1 }}
             whileTap={{ scale: 1 }}
           >
-            {isSubmitting ? "Sending..." : "Submit"}
+            Submit
           </motion.button>
-
-          {submitStatus === "success" && (
-            <motion.p
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              className="text-green-400 text-center font-medium"
-            >
-              Message sent successfully!
-            </motion.p>
-          )}
-
-          {submitStatus === "error" && (
-            <motion.p
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              className="text-red-400 text-center font-medium"
-            >
-              Failed to send message. Please try again.
-            </motion.p>
-          )}
         </form>
       </motion.div>
     </section>

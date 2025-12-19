@@ -18,20 +18,21 @@ const projects: Project[] = [
     title: "autoinsight",
     description: "AI-powered automotive analysis platform",
     image: "/images/autoinsight.webp",
-    link: "#",
+    link: "https://autoinsight-app.vercel.app",
   },
   {
     id: 2,
     title: "momentum",
     description: "Fitness tracking and workout planning application",
-    image: "/images/momentum.webp",
-    link: "#",
+    image: "/images/momentum.png",
+    link: "https://momentum-fit.vercel.app",
   },
   {
     id: 3,
     title: "brainwave",
-    description: "Business automation and management system",
-    image: "/images/bam.webp",
+    description:
+      "An AI-powered learning platform that supercharges your memory with smart flashcards, adaptive quizzes, and next-gen study tools",
+    image: "/images/brainwave.png",
     link: "#",
   },
   {
@@ -51,24 +52,24 @@ const projects: Project[] = [
   {
     id: 6,
     title: "BAM",
-    description: "Business automation and management system",
+    description: "Free learning resources",
     image: "/images/bam.webp",
     link: "#",
   },
   {
     id: 7,
     title: "apanker",
-    description: "Feature-rich Discord bot with moderation tools",
+    description: "State-of-the-art feature-rich Discord bot",
     image: "/images/discord.webp",
     link: "#",
   },
-  {
-    id: 8,
-    title: "BAM",
-    description: "Business automation and management system",
-    image: "/images/bam.webp",
-    link: "#",
-  },
+  // {
+  //   id: 8,
+  //   title: "BAM",
+  //   description: "Business automation and management system",
+  //   image: "/images/bam.webp",
+  //   link: "#",
+  // },
 ];
 
 export function ProjectsGallery() {
@@ -92,11 +93,11 @@ export function ProjectsGallery() {
 
         <div className="flex flex-wrap gap-0 border-[5px] border-[#065F6A] rounded-[10px]">
           {/* First Row - First 4 items */}
-          <div className="flex gap-0 h-[70vh] w-full">
+          <div className="flex gap-0 h-[70vh] w-full shadow-xl">
             {projects.slice(0, 4).map((project, index) => (
               <motion.div
                 key={project.id}
-                className="relative overflow-hidden cursor-pointer"
+                className="relative overflow-hidden cursor-pointer "
                 style={{
                   flex: expandedId === project.id ? 10 : 1,
                   borderRadius:
@@ -127,12 +128,12 @@ export function ProjectsGallery() {
                 />
 
                 {/* Border on hover */}
-                <motion.div
+                {/* <motion.div
                   className="absolute inset-0 border-[0.2rem] border-[#086b78] rounded-[inherit] pointer-events-none"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: expandedId === project.id ? 1 : 0 }}
                   transition={{ duration: 0.3 }}
-                />
+                /> */}
 
                 {/* Project Title - Hides on Hover */}
                 {/* <motion.div
@@ -228,7 +229,7 @@ export function ProjectsGallery() {
                     }}
                     transition={{ duration: 0.3 }}
                   >
-                    {project.description}
+                    {project.title}: {project.description}
                   </motion.div>
                 </motion.div>
               ))}
