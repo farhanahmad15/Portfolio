@@ -6,3 +6,4 @@
 ### About project
 
 Simple HTML, CSS, JS site, may improve later
+
