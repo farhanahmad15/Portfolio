@@ -15,7 +15,7 @@ export default function Home() {
   return (
     <>
       <ConsoleArt />
-      <HamburgerMenu />
+      {/* <HamburgerMenu /> */}
 
       {/* Logo */}
       <div className="fixed top-0 left-0 z-100 px-8">

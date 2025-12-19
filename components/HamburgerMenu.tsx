@@ -19,7 +19,7 @@ export function HamburgerMenu() {
   const menuItems = [
     { href: "https://github.com/farhanahmad15", label: "Github" },
     { href: "#projects", label: "Projects" },
-    { href: "#skills", label: "Skills" },
+    // { href: "#skills", label: "Skills" },
     { href: "#contact", label: "Contact" },
   ];
 
@@ -62,7 +62,7 @@ export function HamburgerMenu() {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            className="fixed w-[30%] h-screen top-0 right-0 flex justify-center items-center z-[2]"
+            className="fixed w-[30%] h-screen top-0 right-0 flex justify-center items-center z-2"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -72,7 +72,7 @@ export function HamburgerMenu() {
               {menuItems.map((item, index) => (
                 <motion.li
                   key={item.label}
-                  className="text-center"
+                  className="text-center z-40"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: 20 }}
@@ -87,7 +87,7 @@ export function HamburgerMenu() {
                       href={item.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="block text-[#eee] no-underline uppercase text-base font-light tracking-wider py-3 hover:text-white transition-colors duration-300"
+                      className="block z-50 text-[#eee] no-underline uppercase text-base font-light tracking-wider py-3 hover:text-white transition-colors duration-300"
                       onClick={handleLinkClick}
                     >
                       {item.label}
@@ -95,7 +95,7 @@ export function HamburgerMenu() {
                   ) : (
                     <Link
                       href={item.href}
-                      className="block text-[#eee] no-underline uppercase text-base font-light tracking-wider py-3 hover:text-white transition-colors duration-300"
+                      className="block z-50 text-[#eee] no-underline uppercase text-base font-light tracking-wider py-3 hover:text-white transition-colors duration-300"
                       onClick={handleLinkClick}
                     >
                       {item.label}
