@@ -42,18 +42,17 @@ export default function Home() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 1.5 }}
             >
-              As a{" "}
+              I'm a{" "}
               <i
                 title="Philomath: A person who loves learning"
                 className="italic font-bold text-black"
               >
                 Philomath
               </i>{" "}
-              and self-taught developer with 5555+ hours of experience, I
-              specialize in creating Responsive Sites using Next.JS and Discord
-              Bots using Discord.JS. My passion lies in building innovative and
-              practical applications. Despite my age, I am committed to
-              achieving excellence in the field of technology.
+               and a self-taught full-stack developer passionate about building
+              practical, innovative products — from micro-SaaS tools and AI
+              agents to mobile applications. I believe great software speaks for
+              itself, and I'm committed to delivering exactly that.
             </motion.h4>
 
             <motion.div
