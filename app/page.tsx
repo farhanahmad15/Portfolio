@@ -4,7 +4,6 @@ import { HamburgerMenu } from "@/components/HamburgerMenu";
 import { TextScramble } from "@/components/TextScramble";
 import { ProjectsGallery } from "@/components/ProjectsGallery";
 import { ContactForm } from "@/components/ContactForm";
-import { ParallaxHero } from "@/components/ParallaxHero";
 import { EasterEgg } from "@/components/EasterEgg";
 import { ConsoleArt } from "@/components/ConsoleArt";
 import { motion } from "framer-motion";
@@ -123,7 +122,6 @@ export default function Home() {
         </section>
 
         {/* Parallax Hero for Mobile */}
-        <ParallaxHero />
 
         {/* Projects Gallery Section */}
         <ProjectsGallery />

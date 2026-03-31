@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { redirect, RedirectType } from "next/navigation";
 
 interface Project {
   id: number;
@@ -118,6 +119,7 @@ export function ProjectsGallery() {
                       : "0",
                   transition: "all 0.5s ease",
                 }}
+                onClick={() => redirect(project.link, RedirectType.push)}
                 onMouseEnter={() => setExpandedId(project.id)}
                 onMouseLeave={() => setExpandedId(null)}
                 // initial={{ opacity: 0, scale: 0.8 }}
