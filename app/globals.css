@@ -208,7 +208,7 @@
     content: "";
     position: absolute;
     inset: -120px 0 -160px 0;
-    background-image:
+    /* background-image:
       radial-gradient(
         520px circle at 18% 80%,
         rgba(176, 234, 135, 0.32),
@@ -223,7 +223,7 @@
         520px circle at 86% 86%,
         rgba(221, 58, 81, 0.32),
         transparent 72%
-      );
+      ); */
     pointer-events: none;
     z-index: 0;
   }
