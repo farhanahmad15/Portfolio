@@ -3,18 +3,11 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
+import { bungee } from "@/lib/font-config";
 
 export function EasterEgg() {
   const [isVisible, setIsVisible] = useState(false);
-  const colorPalette = [
-    "#000000",
-    "#6a040f",
-    "#ee9b00",
-    "#ca6702",
-    "#bb3e03",
-    "#ae2012",
-    "#9b2226",
-  ];
+  const colorPalette = ["#b0ea87", "#7a1a95", "#dd3a51", "#ebfae4", "#9bb38f"];
 
   const toggleBobby = () => {
     setIsVisible(!isVisible);
@@ -34,13 +27,19 @@ export function EasterEgg() {
 
   return (
     <>
-      <footer className="relative h-8 bg-transparent">
-        <p
-          className="text-center cursor-pointer text-sm select-none font-bold"
-          onClick={toggleBobby}
-        >
-          {renderColoredText("© 2025 Farhan Ahmad. All rights reserved.")}
-        </p>
+      <footer className="footer-glow py-8">
+        <div className="mx-auto flex w-full max-w-6xl flex-col items-center gap-3 px-6 text-center">
+          <button
+            type="button"
+            className={`${bungee.className} cursor-pointer text-sm font-semibold uppercase tracking-[0.2em] text-[#ebfae4]/70 hover:text-[#ebfae4]`}
+            onClick={toggleBobby}
+          >
+            {renderColoredText("© 2025 Farhan Ahmad. All rights reserved.")}
+          </button>
+          {/* <p className="text-xs text-[#ebfae4]/50">
+            Tap the footer to reveal a hidden friend.
+          </p> */}
+        </div>
       </footer>
 
       <AnimatePresence>

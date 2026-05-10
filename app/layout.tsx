@@ -1,14 +1,7 @@
 import type { Metadata } from "next";
-import { Poppins } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
+import { bungee, manrope } from "@/lib/font-config";
 import "./globals.css";
-
-const poppins = Poppins({
-  weight: ["200", "300", "400", "500", "600", "700", "800", "900"],
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-poppins",
-});
 
 export const metadata: Metadata = {
   title: "Farhan Ahmad",
@@ -56,7 +49,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={poppins.className}>
+      <body className={`${manrope.variable} ${bungee.variable} font-sans`}>
         {children}
         <Analytics />
       </body>

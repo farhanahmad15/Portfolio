@@ -1,9 +1,8 @@
 "use client";
 
-import { useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { redirect, RedirectType } from "next/navigation";
+import { bungee } from "@/lib/font-config";
 
 interface Project {
   id: number;
@@ -11,6 +10,7 @@ interface Project {
   description: string;
   image: string;
   link: string;
+  status: "live" | "in-progress" | "in-use" | "archived";
 }
 
 const projects: Project[] = [
@@ -21,6 +21,7 @@ const projects: Project[] = [
       "brainwave's big brother, FSRS based revision, adaptive quizzes, and next-gen study tools",
     image: "/images/memora.png",
     link: "#",
+    status: "in-progress",
   },
   {
     id: 2,
@@ -28,6 +29,7 @@ const projects: Project[] = [
     description: "AI-powered meeting analysis platform",
     image: "/images/autoinsight.webp",
     link: "https://autoinsight-app.vercel.app",
+    status: "live",
   },
   {
     id: 3,
@@ -35,6 +37,7 @@ const projects: Project[] = [
     description: "Fitness tracking and workout planning application",
     image: "/images/momentum.png",
     link: "https://momentum-fit.vercel.app",
+    status: "live",
   },
   {
     id: 4,
@@ -42,6 +45,7 @@ const projects: Project[] = [
     description: "An AI-powered learning and notetaking platform",
     image: "/images/brainwave.png",
     link: "#",
+    status: "in-use",
   },
   {
     id: 5,
@@ -49,6 +53,7 @@ const projects: Project[] = [
     description: "Expenses tracking app",
     image: "/images/cash.png",
     link: "#",
+    status: "in-use",
   },
   {
     id: 6,
@@ -56,6 +61,7 @@ const projects: Project[] = [
     description: "Class and lecture tracker",
     image: "/images/stride.png",
     link: "#",
+    status: "in-use",
   },
   {
     id: 7,
@@ -63,6 +69,7 @@ const projects: Project[] = [
     description: "Free learning resources",
     image: "/images/bam.webp",
     link: "#",
+    status: "archived",
   },
   {
     id: 8,
@@ -70,6 +77,7 @@ const projects: Project[] = [
     description: "Completely autonomous multifunctional AI agent",
     image: "/images/sivjar.png",
     link: "#",
+    status: "in-use",
   },
 
   // {
@@ -78,173 +86,128 @@ const projects: Project[] = [
   //   description: "Business automation and management system",
   //   image: "/images/bam.webp",
   //   link: "#",
+  //   status: "archived",
   // },
 ];
 
-export function ProjectsGallery() {
-  const [expandedId, setExpandedId] = useState<number | null>(null);
+function getStatusConfig(status: Project["status"]) {
+  switch (status) {
+    case "live":
+      return {
+        label: "Live",
+        buttonClass:
+          "border-[#b0ea87]/60 bg-[#b0ea87] text-[#040901] hover:bg-[#c8f0a9]",
+      };
+    case "in-progress":
+      return {
+        label: "In Progress",
+        buttonClass:
+          "border-[#dd3a51]/50 text-[#dd3a51] bg-[#dd3a51]/10 hover:bg-[#dd3a51]/20",
+      };
+    case "in-use":
+      return {
+        label: "In Use",
+        buttonClass:
+          "border-[#7a1a95]/60 text-[#e5b8ff] bg-[#7a1a95]/20 hover:bg-[#7a1a95]/30",
+      };
+    case "archived":
+      return {
+        label: "Archived",
+        buttonClass: "border-white/15 text-[#ebfae4]/50 bg-white/5",
+      };
+    default:
+      return {
+        label: "In Progress",
+        buttonClass:
+          "border-[#dd3a51]/50 text-[#dd3a51] bg-[#dd3a51]/10 hover:bg-[#dd3a51]/20",
+      };
+  }
+}
 
+export function ProjectsGallery() {
   return (
-    <section
-      id="projects"
-      className="min-h-screen flex items-center justify-center py-20 px-4"
-    >
-      <div className="w-full max-w-285">
-        <motion.h2
-          className="text-[30px] leading-10 font-bold text-black text-center mb-15"
-          initial={{ opacity: 0, y: -50 }}
+    <section id="projects" className="relative py-24 sm:py-32">
+      <div className="mx-auto w-full max-w-6xl px-6">
+        <motion.div
+          className="flex flex-col items-center gap-4 text-center"
+          initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.7 }}
           viewport={{ once: true }}
         >
-          Projects
-        </motion.h2>
+          <h2
+            className={`${bungee.className} text-3xl font-normal text-[#ebfae4] sm:text-4xl`}
+          >
+            Projects
+          </h2>
+          <p className="max-w-2xl text-sm text-[#ebfae4]/70 sm:text-base">
+            Focused on building lean, practical products with sharp UX and
+            strong technical depth.
+          </p>
+        </motion.div>
 
-        <div className="flex flex-wrap gap-0 border-[5px] border-[#065F6A] rounded-[10px]">
-          {/* First Row - First 4 items */}
-          <div className="flex gap-0 h-[70vh] w-full shadow-xl">
-            {projects.slice(0, 4).map((project, index) => (
-              <motion.div
+        <div className="mt-12 grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
+          {projects.map((project, index) => {
+            const isLive = project.status === "live";
+            const isExternal = project.link.startsWith("http");
+            const statusConfig = getStatusConfig(project.status);
+
+            return (
+              <motion.article
                 key={project.id}
-                className="relative overflow-hidden cursor-pointer "
-                style={{
-                  flex: expandedId === project.id ? 10 : 1,
-                  borderRadius:
-                    index === 0 && projects.length <= 4
-                      ? "10px 0 0 10px"
-                      : index === 3 || index === projects.slice(0, 4).length - 1
-                      ? projects.length <= 4
-                        ? "0 10px 10px 0"
-                        : "0"
-                      : "0",
-                  transition: "all 0.5s ease",
-                }}
-                onClick={() => redirect(project.link, RedirectType.push)}
-                onMouseEnter={() => setExpandedId(project.id)}
-                onMouseLeave={() => setExpandedId(null)}
-                // initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="group flex h-full flex-col rounded-3xl border border-white/10 bg-[#0b1308]/70 p-5 backdrop-blur"
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.05 }}
                 viewport={{ once: true }}
               >
-                <div
-                  className="absolute inset-0"
-                  style={{
-                    backgroundImage: `url(${project.image})`,
-                    backgroundPosition: "center",
-                    backgroundSize: "cover",
-                    backgroundRepeat: "no-repeat",
-                  }}
-                />
-
-                {/* Border on hover */}
-                {/* <motion.div
-                  className="absolute inset-0 border-[0.2rem] border-[#086b78] rounded-[inherit] pointer-events-none"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: expandedId === project.id ? 1 : 0 }}
-                  transition={{ duration: 0.3 }}
-                /> */}
-
-                {/* Project Title - Hides on Hover */}
-                {/* <motion.div
-                className="absolute bottom-[5%] left-1/2 -translate-x-1/2 w-[80%] text-center"
-                initial={{ opacity: 1 }}
-                animate={{
-                  opacity: expandedId === project.id ? 0 : 1,
-                }}
-                transition={{ duration: 0.3 }}
-              >
-                <h3 className="text-white bg-black/60 rounded-md text-[1.2rem] py-2 px-4">
-                  {project.title}
-                </h3>
-              </motion.div> */}
-
-                {/* Description - Shows on Hover */}
-                <motion.div
-                  className="absolute bottom-[5%] left-1/2 -translate-x-1/2 w-[80%] text-center bg-black/60 text-white text-[1.2rem] py-2 px-4 rounded-[5px]"
-                  initial={{ opacity: 0 }}
-                  animate={{
-                    opacity: expandedId === project.id ? 1 : 0,
-                  }}
-                  transition={{ duration: 0.3 }}
-                >
-                  {project.title}: {project.description}
-                </motion.div>
-              </motion.div>
-            ))}
-          </div>
-
-          {/* Second Row - Remaining items if more than 4 */}
-          {projects.length > 4 && (
-            <div className="flex gap-0 h-[70vh] w-full">
-              {projects.slice(4).map((project, index) => (
-                <motion.div
-                  key={project.id}
-                  className="relative overflow-hidden cursor-pointer"
-                  style={{
-                    flex: expandedId === project.id ? 10 : 1,
-                    borderRadius:
-                      index === 0
-                        ? "10px 0 0 10px"
-                        : index === projects.slice(4).length - 1
-                        ? "0 10px 10px 0"
-                        : "0",
-                    transition: "all 0.5s ease",
-                  }}
-                  onMouseEnter={() => setExpandedId(project.id)}
-                  onMouseLeave={() => setExpandedId(null)}
-                  // initial={{ opacity: 0, scale: 0.8 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.5, delay: (index + 4) * 0.1 }}
-                  viewport={{ once: true }}
-                >
-                  <div
-                    className="absolute inset-0"
-                    style={{
-                      backgroundImage: `url(${project.image})`,
-                      backgroundPosition: "center",
-                      backgroundSize: "cover",
-                      backgroundRepeat: "no-repeat",
-                    }}
+                <div className="relative aspect-[4/3] overflow-hidden rounded-3xl border border-white/10">
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 33vw"
+                    className="object-cover transition duration-700 group-hover:scale-[1.05]"
                   />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#040901]/80 via-[#040901]/20 to-transparent" />
+                  <div className="absolute left-4 top-4 rounded-full border border-[#b0ea87]/40 bg-[#040901]/60 px-3 py-1 text-xs uppercase tracking-[0.3em] text-[#b0ea87]">
+                    {String(index + 1).padStart(2, "0")}
+                  </div>
+                </div>
 
-                  {/* Border on hover */}
-                  <motion.div
-                    className="absolute inset-0 border-[0.2rem] border-[#086b78] rounded-[inherit] pointer-events-none"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: expandedId === project.id ? 1 : 0 }}
-                    transition={{ duration: 0.3 }}
-                  />
+                <div className="mt-5 flex flex-1 flex-col gap-2">
+                  <h3 className="text-lg uppercase tracking-[0.15em] text-[#ebfae4]">
+                    {project.title}
+                  </h3>
+                  <p className="text-sm text-[#ebfae4]/70">
+                    {project.description}
+                  </p>
+                </div>
 
-                  {/* Project Title - Hides on Hover
-                  <motion.div
-                    className="absolute bottom-[5%] left-1/2 -translate-x-1/2 w-[80%] text-center"
-                    initial={{ opacity: 1 }}
-                    animate={{
-                      opacity: expandedId === project.id ? 0 : 1,
-                    }}
-                    transition={{ duration: 0.3 }}
-                  >
-                    <h3 className="text-white bg-black/60 rounded-md text-[1.2rem] py-2 px-4">
-                      {project.title}
-                    </h3>
-                  </motion.div> */}
-
-                  {/* Description - Shows on Hover */}
-                  <motion.div
-                    className="absolute bottom-[5%] left-1/2 -translate-x-1/2 w-[80%] text-center bg-black/60 text-white text-[1.2rem] py-2 px-4 rounded-[5px]"
-                    initial={{ opacity: 0 }}
-                    animate={{
-                      opacity: expandedId === project.id ? 1 : 0,
-                    }}
-                    transition={{ duration: 0.3 }}
-                  >
-                    {project.title}: {project.description}
-                  </motion.div>
-                </motion.div>
-              ))}
-            </div>
-          )}
+                <div className="mt-auto pt-4">
+                  {isLive ? (
+                    <a
+                      href={project.link}
+                      target={isExternal ? "_blank" : undefined}
+                      rel={isExternal ? "noopener noreferrer" : undefined}
+                      className={`inline-flex items-center gap-2 rounded-full border px-4 py-2 text-xs uppercase tracking-[0.25em] transition hover:-translate-y-0.5 ${statusConfig.buttonClass}`}
+                    >
+                      View Project
+                      <span className="text-base">
+                        {isExternal ? "↗" : "→"}
+                      </span>
+                    </a>
+                  ) : (
+                    <span
+                      className={`inline-flex items-center gap-2 rounded-full border px-4 py-2 text-xs uppercase tracking-[0.25em] ${statusConfig.buttonClass}`}
+                    >
+                      {statusConfig.label}
+                    </span>
+                  )}
+                </div>
+              </motion.article>
+            );
+          })}
         </div>
       </div>
     </section>
