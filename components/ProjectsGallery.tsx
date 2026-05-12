@@ -106,7 +106,7 @@ function getStatusConfig(status: Project["status"]) {
       };
     case "in-use":
       return {
-        label: "In Use",
+        label: "Locally Used",
         buttonClass:
           "border-[#7a1a95]/60 text-[#e5b8ff] bg-[#7a1a95]/20 hover:bg-[#7a1a95]/30",
       };

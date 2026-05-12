@@ -253,8 +253,8 @@ export default function Home() {
 
               <div className="grid gap-4">
                 {[
-                  { label: "Hours shipped", value: "5,555+" },
-                  { label: "Products built", value: "18+" },
+                  { label: "Hours shipped", value: "6,000+" },
+                  { label: "Products built", value: "20+" },
                   { label: "Focused on", value: "MVP velocity" },
                 ].map((item) => (
                   <div

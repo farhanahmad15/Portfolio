@@ -6,7 +6,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Farhan Ahmad",
   description:
-    "As a Philomath and self-taught developer with 5555+ hours of experience, I specialize in creating Responsive Sites using Next.JS and Discord Bots using Discord.JS. My passion lies in building innovative and practical applications. Despite my age, I am committed to achieving excellence in the field of technology.",
+    "As a Philomath and self-taught developer with 6000+ hours of experience, I specialize in creating Responsive Sites using Next.JS and Discord Bots using Discord.JS. My passion lies in building innovative and practical applications. Despite my age, I am committed to achieving excellence in the field of technology.",
   keywords: [
     "Farhan",
     "Farhan Ahmad",
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     url: "https://farhanahmad15.github.io/Portfolio/",
     title: "Farhan Ahmad",
     description:
-      "As a Philomath and self-taught developer with 5555+ hours of experience, I specialize in creating Responsive Sites using Next.JS and Discord Bots using Discord.JS. My passion lies in building innovative and practical applications. Despite my age, I am committed to achieving excellence in the field of technology.",
+      "As a Philomath and self-taught developer with 6000+ hours of experience, I specialize in creating Responsive Sites using Next.JS and Discord Bots using Discord.JS. My passion lies in building innovative and practical applications. Despite my age, I am committed to achieving excellence in the field of technology.",
     images: [
       {
         url: "https://farhanahmad15.github.io/Portfolio/images/photo.png",
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Farhan Ahmad",
     description:
-      "As a Philomath and self-taught developer with 5555+ hours of experience, I specialize in creating Responsive Sites using Next.JS and Discord Bots using Discord.JS. My passion lies in building innovative and practical applications. Despite my age, I am committed to achieving excellence in the field of technology.",
+      "As a Philomath and self-taught developer with 6000+ hours of experience, I specialize in creating Responsive Sites using Next.JS and Discord Bots using Discord.JS. My passion lies in building innovative and practical applications. Despite my age, I am committed to achieving excellence in the field of technology.",
     images: ["https://farhanahmad15.github.io/Portfolio/photo.png"],
   },
   icons: {
