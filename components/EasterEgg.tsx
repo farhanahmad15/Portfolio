@@ -4,13 +4,18 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { bungee } from "@/lib/font-config";
+import posthog from "posthog-js";
 
 export function EasterEgg() {
   const [isVisible, setIsVisible] = useState(false);
   const colorPalette = ["#b0ea87", "#7a1a95", "#dd3a51", "#ebfae4", "#9bb38f"];
 
   const toggleBobby = () => {
-    setIsVisible(!isVisible);
+    const next = !isVisible;
+    setIsVisible(next);
+    if (next) {
+      posthog.capture("easter_egg_revealed");
+    }
   };
 
   // Generate colored letters for the footer text using deterministic colors

@@ -9,6 +9,7 @@ import { bungee } from "@/lib/font-config";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
+import posthog from "posthog-js";
 import {
   Activity,
   Atom,
@@ -125,6 +126,12 @@ export default function Home() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="col-span-2 inline-flex w-full items-center justify-center rounded-full border border-[#b0ea87]/50 px-3 py-1.5 text-center text-[9px] uppercase tracking-[0.2em] text-[#b0ea87] transition hover:bg-[#b0ea87] hover:text-[#040901] sm:hidden"
+                onClick={() =>
+                  posthog.capture("contact_email_clicked", {
+                    location: "header_mobile",
+                    type: "email",
+                  })
+                }
               >
                 Let&apos;s Talk ↗
               </a>
@@ -134,6 +141,12 @@ export default function Home() {
               target="_blank"
               rel="noopener noreferrer"
               className="hidden items-center justify-center rounded-full border border-[#b0ea87]/50 px-4 py-2 text-center text-xs uppercase tracking-[0.25em] text-[#b0ea87] transition hover:bg-[#b0ea87] hover:text-[#040901] sm:inline-flex"
+              onClick={() =>
+                posthog.capture("contact_email_clicked", {
+                  location: "header",
+                  type: "email",
+                })
+              }
             >
               Let&apos;s Talk ↗
             </a>
@@ -180,12 +193,18 @@ export default function Home() {
               <Link
                 href="#projects"
                 className="rounded-full bg-[#b0ea87] px-6 py-3 text-xs uppercase tracking-[0.25em] text-[#040901] transition hover:-translate-y-0.5"
+                onClick={() =>
+                  posthog.capture("hero_cta_clicked", { cta: "view_projects" })
+                }
               >
                 View Projects
               </Link>
               <Link
                 href="#contact"
                 className="rounded-full border border-white/20 px-6 py-3 text-xs uppercase tracking-[0.25em] text-[#ebfae4] transition hover:border-[#b0ea87]/60 hover:text-[#b0ea87]"
+                onClick={() =>
+                  posthog.capture("hero_cta_clicked", { cta: "get_in_touch" })
+                }
               >
                 Get in Touch
               </Link>
@@ -209,6 +228,12 @@ export default function Home() {
                 rel="noopener noreferrer"
                 title="View My GitHub Projects"
                 className="rounded-full border border-white/10 p-3 transition hover:border-[#b0ea87]/60"
+                onClick={() =>
+                  posthog.capture("social_link_clicked", {
+                    platform: "github",
+                    location: "hero",
+                  })
+                }
               >
                 <Github className="h-5 w-5 text-[#ebfae4]" aria-hidden />
               </a>
@@ -218,6 +243,12 @@ export default function Home() {
                 rel="noopener noreferrer"
                 title="Email Me"
                 className="rounded-full border border-white/10 p-3 transition hover:border-[#b0ea87]/60"
+                onClick={() =>
+                  posthog.capture("social_link_clicked", {
+                    platform: "email",
+                    location: "hero",
+                  })
+                }
               >
                 <Mail className="h-5 w-5 text-[#ebfae4]" aria-hidden />
               </a>
@@ -392,6 +423,12 @@ export default function Home() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="rounded-full bg-[#b0ea87] px-6 py-3 text-xs uppercase tracking-[0.25em] text-[#040901] transition hover:-translate-y-0.5"
+                  onClick={() =>
+                    posthog.capture("contact_email_clicked", {
+                      location: "contact_section",
+                      type: "email",
+                    })
+                  }
                 >
                   thefarhan@duck.com
                 </a>
@@ -400,6 +437,12 @@ export default function Home() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="rounded-full border border-white/20 px-6 py-3 text-xs uppercase tracking-[0.25em] text-[#ebfae4] transition hover:border-[#b0ea87]/60 hover:text-[#b0ea87]"
+                  onClick={() =>
+                    posthog.capture("contact_email_clicked", {
+                      location: "contact_section",
+                      type: "github",
+                    })
+                  }
                 >
                   GitHub ↗
                 </a>

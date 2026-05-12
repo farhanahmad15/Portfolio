@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import posthog from "posthog-js";
 
 export function ContactForm() {
   const [formData, setFormData] = useState({
@@ -16,6 +17,8 @@ export function ContactForm() {
     const subject = encodeURIComponent(formData.subject);
     const body = encodeURIComponent(formData.message);
     const mailtoLink = `mailto:thefarhan@duck.com?subject=${subject}&body=${body}`;
+
+    posthog.capture("contact_form_submitted");
 
     window.open(mailtoLink, "_blank");
   };

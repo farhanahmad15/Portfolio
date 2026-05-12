@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { bungee } from "@/lib/font-config";
+import posthog from "posthog-js";
 
 interface Project {
   id: number;
@@ -161,7 +162,7 @@ export function ProjectsGallery() {
                 transition={{ duration: 0.6, delay: index * 0.05 }}
                 viewport={{ once: true }}
               >
-                <div className="relative aspect-[4/3] overflow-hidden rounded-3xl border border-white/10">
+                <div className="relative aspect-4/3 overflow-hidden rounded-3xl border border-white/10">
                   <Image
                     src={project.image}
                     alt={project.title}
@@ -169,7 +170,7 @@ export function ProjectsGallery() {
                     sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 33vw"
                     className="object-cover transition duration-700 group-hover:scale-[1.05]"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#040901]/80 via-[#040901]/20 to-transparent" />
+                  <div className="absolute inset-0 bg-linear-to-t from-[#040901]/80 via-[#040901]/20 to-transparent" />
                   <div className="absolute left-4 top-4 rounded-full border border-[#b0ea87]/40 bg-[#040901]/60 px-3 py-1 text-xs uppercase tracking-[0.3em] text-[#b0ea87]">
                     {String(index + 1).padStart(2, "0")}
                   </div>
@@ -191,6 +192,13 @@ export function ProjectsGallery() {
                       target={isExternal ? "_blank" : undefined}
                       rel={isExternal ? "noopener noreferrer" : undefined}
                       className={`inline-flex items-center gap-2 rounded-full border px-4 py-2 text-xs uppercase tracking-[0.25em] transition hover:-translate-y-0.5 ${statusConfig.buttonClass}`}
+                      onClick={() =>
+                        posthog.capture("project_link_clicked", {
+                          project_title: project.title,
+                          project_link: project.link,
+                          project_status: project.status,
+                        })
+                      }
                     >
                       View Project
                       <span className="text-base">
