@@ -7,6 +7,7 @@ import { EasterEgg } from "@/components/EasterEgg";
 import { ConsoleArt } from "@/components/ConsoleArt";
 import { bungee } from "@/lib/font-config";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import Link from "next/link";
 import {
   Activity,
@@ -82,11 +83,15 @@ export default function Home() {
         <div className="mx-auto w-full max-w-6xl px-6 py-2 sm:py-4">
           <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between sm:gap-5">
             <div className="flex items-center justify-between sm:justify-start sm:gap-4">
-              <Link
-                href="#hero"
-                className={`${bungee.className} text-sm uppercase tracking-[0.4em] text-[#ebfae4]`}
-              >
-                Farhan Ahmad
+              <Link href="#hero" className="flex items-center">
+                <Image
+                  src="/images/logo.png"
+                  alt="Farhan Ahmad"
+                  width={40}
+                  height={62}
+                  priority
+                  className="h-10 w-auto origin-left scale-150"
+                />
               </Link>
               <button
                 type="button"

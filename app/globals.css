@@ -162,12 +162,6 @@
         520px circle at 92% 88%,
         rgba(221, 58, 81, 0.26),
         transparent 65%
-      ),
-      linear-gradient(
-        120deg,
-        transparent 42%,
-        var(--grid-line-strong) 44%,
-        transparent 46%
       );
     pointer-events: none;
     z-index: 0;

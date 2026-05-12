@@ -7,17 +7,24 @@ interface TextScrambleProps {
   className?: string;
 }
 
+function getScrambleSeed(text: string) {
+  const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+  return text
+    .split("")
+    .map((char) => {
+      if (char === " ") return " ";
+      return letters[Math.floor(Math.random() * letters.length)];
+    })
+    .join("");
+}
+
 export function TextScramble({ text, className = "" }: TextScrambleProps) {
   const [displayText, setDisplayText] = useState(text);
-  const [isHovering, setIsHovering] = useState(false);
+  const [scrambleTrigger, setScrambleTrigger] = useState(0);
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
-    if (!isHovering) {
-      setDisplayText(text);
-      return;
-    }
-
     const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     let iteration = 0;
 
@@ -46,20 +53,36 @@ export function TextScramble({ text, className = "" }: TextScrambleProps) {
       }
 
       iteration += 1 / 3;
-    }, 100);
+    }, 50);
 
     return () => {
       if (intervalRef.current) {
         clearInterval(intervalRef.current);
       }
     };
-  }, [isHovering, text]);
+  }, [scrambleTrigger, text]);
+
+  useEffect(() => {
+    setDisplayText(getScrambleSeed(text));
+    setScrambleTrigger((prev) => prev + 1);
+  }, [text]);
+
+  function handleMouseEnter() {
+    setScrambleTrigger((prev) => prev + 1);
+  }
+
+  function handleMouseLeave() {
+    if (intervalRef.current) {
+      clearInterval(intervalRef.current);
+    }
+    setDisplayText(text);
+  }
 
   return (
     <h1
       className={className}
-      onMouseEnter={() => setIsHovering(true)}
-      onMouseLeave={() => setIsHovering(false)}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
     >
       {displayText}
     </h1>
