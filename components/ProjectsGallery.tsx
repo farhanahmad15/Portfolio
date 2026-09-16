@@ -16,10 +16,28 @@ interface Project {
 
 const projects: Project[] = [
   {
+    id: 8,
+    title: "CCPAC",
+    description:
+      "A student-driven community exploring the laws of nature, from the smallest particles to the largest galaxies",
+    image: "/images/ccpac.png",
+    link: "https://ccpac.vercel.app",
+    status: "live",
+  },
+  //  // {
+  //   id: 8,
+  //   title: "Carnaval",
+  //   description:
+  //     "A next-generation digital experience that turns an event into something you don't just attend — you enter.",
+  //   image: "/images/memora.png",
+  //   link: "#",
+  //   status: "in-progress",
+  // },
+  {
     id: 1,
     title: "memora",
     description:
-      "brainwave's big brother, FSRS based revision, adaptive quizzes, and next-gen study tools",
+      "FSRS based revision, adaptive quizzes, and next-gen study tools",
     image: "/images/memora.png",
     link: "#",
     status: "in-progress",
@@ -64,18 +82,19 @@ const projects: Project[] = [
     link: "#",
     status: "in-use",
   },
+  // {
+  //   id: 7,
+  //   title: "BAM",
+  //   description: "Free learning resources",
+  //   image: "/images/bam.webp",
+  //   link: "#",
+  //   status: "archived",
+  // },
   {
     id: 7,
-    title: "BAM",
-    description: "Free learning resources",
-    image: "/images/bam.webp",
-    link: "#",
-    status: "archived",
-  },
-  {
-    id: 8,
     title: "Sivjar",
-    description: "Completely autonomous multifunctional AI agent",
+    description:
+      "A fully autonomous, self-directed intelligence capable of independent cognition, adaptive reasoning, and autonomous execution across virtually any domain.",
     image: "/images/sivjar.png",
     link: "#",
     status: "in-use",
