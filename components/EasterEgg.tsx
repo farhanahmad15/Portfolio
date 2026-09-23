@@ -39,7 +39,9 @@ export function EasterEgg() {
             className={`${bungee.className} cursor-pointer text-sm font-semibold uppercase tracking-[0.2em] text-[#ebfae4]/70 hover:text-[#ebfae4]`}
             onClick={toggleBobby}
           >
-            {renderColoredText("© 2025 Farhan Ahmad. All rights reserved.")}
+            {renderColoredText(
+              `© ${new Date().getFullYear()} Farhan Ahmad. All rights reserved.`,
+            )}
           </button>
           {/* <p className="text-xs text-[#ebfae4]/50">
             Tap the footer to reveal a hidden friend.
