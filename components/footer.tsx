@@ -5,6 +5,7 @@ import { Mail, Globe } from "lucide-react";
 import { GithubIcon } from "@/components/github-icon";
 import { EasterEgg } from "@/components/easter-egg";
 import { PORTFOLIO_COLORS } from "@/lib/constants";
+import { SlSocialLinkedin } from "react-icons/sl";
 
 export function Footer() {
   return (
@@ -32,7 +33,8 @@ export function Footer() {
               FARHAN AHMAD
             </h3>
             <p className="text-xs font-sans text-muted-foreground leading-relaxed">
-              Philomath & self-taught full-stack developer building practical, high-impact products across Web, AI, and Mobile platforms.
+              Philomath & self-taught full-stack developer building practical,
+              high-impact products across Web, AI, and Mobile platforms.
             </p>
           </div>
 
@@ -76,15 +78,23 @@ export function Footer() {
             </h4>
             <ul className="space-y-3 font-sans text-xs text-muted-foreground">
               <li className="flex items-center gap-2">
-                <Mail className="w-4 h-4 text-primary flex-shrink-0" />
-                <a href="mailto:thefarhan@duck.com" className="hover:text-primary transition-colors">
-                  thefarhan@duck.com
+                <SlSocialLinkedin className="w-4 h-4 text-primary flex-shrink-0" />
+                <a
+                  href="https://www.linkedin.com/in/farhan-ahmad-909959409/"
+                  className="hover:text-primary transition-colors"
+                >
+                  LinkedIn
                 </a>
               </li>
               <li className="flex items-center gap-2">
                 <GithubIcon className="w-4 h-4 text-primary flex-shrink-0" />
-                <a href="https://github.com/farhanahmad15" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">
-                  github.com/farhanahmad15
+                <a
+                  href="https://github.com/farhanahmad15"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-primary transition-colors"
+                >
+                  Github
                 </a>
               </li>
             </ul>

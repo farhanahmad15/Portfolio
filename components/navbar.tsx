@@ -69,7 +69,10 @@ export function Navbar() {
           <Button
             className="bg-primary text-primary-foreground hover:bg-primary/90 font-semibold shadow-md border border-border font-bungee text-xs tracking-wider px-5 py-2.5 h-auto flex items-center justify-center leading-none rounded-full"
             onClick={() => {
-              window.open("mailto:thefarhan@duck.com", "_blank");
+              window.open(
+                "https://www.linkedin.com/in/farhan-ahmad-909959409/",
+                "_blank",
+              );
             }}
           >
             <span>Let&apos;s Talk</span>
@@ -123,7 +126,10 @@ export function Navbar() {
             className="w-full mt-2 bg-primary text-primary-foreground font-semibold font-bungee tracking-wider py-3 rounded-full"
             onClick={() => {
               setMobileMenuOpen(false);
-              window.open("mailto:thefarhan@duck.com", "_blank");
+              window.open(
+                "https://www.linkedin.com/in/farhan-ahmad-909959409/",
+                "_blank",
+              );
             }}
           >
             Let&apos;s Talk

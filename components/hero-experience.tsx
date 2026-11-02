@@ -14,6 +14,7 @@ import { Button } from "@/components/ui/button";
 import { TextScramble } from "@/components/text-scramble";
 import { PORTFOLIO_COLORS } from "@/lib/constants";
 import { cn } from "@/lib/utils";
+import { SlSocialLinkedin } from "react-icons/sl";
 
 type AvailabilityStatus = "limited" | "available" | "busy";
 
@@ -78,7 +79,10 @@ export function HeroExperience() {
   }, []);
 
   return (
-    <section id="hero" className="relative min-h-screen w-full flex flex-col justify-center overflow-hidden bg-background text-foreground select-none pt-28 pb-20 px-6">
+    <section
+      id="hero"
+      className="relative min-h-screen w-full flex flex-col justify-center overflow-hidden bg-background text-foreground select-none pt-28 pb-20 px-6"
+    >
       {/* Dynamic Parallax Background Glows */}
       <div
         className="absolute inset-0 pointer-events-none transition-transform duration-300 ease-out"
@@ -97,7 +101,8 @@ export function HeroExperience() {
         style={{
           backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`,
           maskImage: "linear-gradient(to bottom, black 65%, transparent 100%)",
-          WebkitMaskImage: "linear-gradient(to bottom, black 65%, transparent 100%)",
+          WebkitMaskImage:
+            "linear-gradient(to bottom, black 65%, transparent 100%)",
         }}
       />
 
@@ -122,7 +127,15 @@ export function HeroExperience() {
           />
 
           <p className="text-base sm:text-lg text-muted-foreground font-sans max-w-2xl leading-relaxed mb-8 font-normal">
-            I&apos;m a <span style={{ color: PORTFOLIO_COLORS.primaryGreen, fontWeight: 600 }}>Philomath</span> and self-taught full-stack developer building practical, high-impact products — from micro-SaaS tools and AI agents to mobile applications.
+            I&apos;m a{" "}
+            <span
+              style={{ color: PORTFOLIO_COLORS.primaryGreen, fontWeight: 600 }}
+            >
+              Philomath
+            </span>{" "}
+            and self-taught full-stack developer building practical, high-impact
+            products — from micro-SaaS tools and AI agents to mobile
+            applications.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center gap-5 font-sans w-full sm:w-auto">
@@ -159,13 +172,13 @@ export function HeroExperience() {
               <GithubIcon className="h-5 w-5" />
             </a>
             <a
-              href="mailto:thefarhan@duck.com"
+              href="https://www.linkedin.com/in/farhan-ahmad-909959409/"
               target="_blank"
               rel="noopener noreferrer"
-              title="Email Me"
+              title="Contact Me"
               className="rounded-full border border-border bg-card/60 p-3 transition hover:border-primary/60 hover:text-primary"
             >
-              <Mail className="h-5 w-5" />
+              <SlSocialLinkedin className="h-5 w-5" />
             </a>
           </div>
         </div>
@@ -181,11 +194,16 @@ export function HeroExperience() {
                   Availability
                 </span>
                 <h3 className="text-lg sm:text-xl font-bold font-bungee text-foreground flex items-center gap-2.5">
-                  <span className={cn("h-3 w-3 rounded-full animate-pulse", currentStatus.dotColor)} />
+                  <span
+                    className={cn(
+                      "h-3 w-3 rounded-full animate-pulse",
+                      currentStatus.dotColor,
+                    )}
+                  />
                   <span>{currentStatus.label}</span>
                 </h3>
               </div>
-{/* 
+              {/* 
               <div
                 className={cn(
                   "flex items-center gap-2 px-3 py-1.5 rounded-full border text-xs font-sans font-semibold select-none",
