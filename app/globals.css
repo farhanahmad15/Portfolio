@@ -1,57 +1,56 @@
 @import "tailwindcss";
 @import "tw-animate-css";
+@import "shadcn/tailwind.css";
 
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-manrope);
-  --font-display: var(--font-bungee);
-  --font-mono: var(--font-mono);
-  --color-sidebar-ring: var(--sidebar-ring);
-  --color-sidebar-border: var(--sidebar-border);
-  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-  --color-sidebar-accent: var(--sidebar-accent);
-  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-  --color-sidebar-primary: var(--sidebar-primary);
-  --color-sidebar-foreground: var(--sidebar-foreground);
-  --color-sidebar: var(--sidebar);
-  --color-chart-5: var(--chart-5);
-  --color-chart-4: var(--chart-4);
-  --color-chart-3: var(--chart-3);
-  --color-chart-2: var(--chart-2);
-  --color-chart-1: var(--chart-1);
-  --color-ring: var(--ring);
-  --color-input: var(--input);
+  --font-sans: var(--font-sans);
+  --font-heading: var(--font-sans);
+  --font-bungee: var(--font-bungee);
+  --font-got: var(--font-bungee);
   --color-border: var(--border);
-  --color-destructive: var(--destructive);
-  --color-accent-foreground: var(--accent-foreground);
-  --color-accent: var(--accent);
-  --color-muted-foreground: var(--muted-foreground);
-  --color-muted: var(--muted);
-  --color-secondary-foreground: var(--secondary-foreground);
-  --color-secondary: var(--secondary);
-  --color-primary-foreground: var(--primary-foreground);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
   --color-primary: var(--primary);
-  --color-popover-foreground: var(--popover-foreground);
-  --color-popover: var(--popover);
-  --color-card-foreground: var(--card-foreground);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
   --color-card: var(--card);
-  --radius-sm: calc(var(--radius) - 4px);
-  --radius-md: calc(var(--radius) - 2px);
-  --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) + 4px);
-  --radius-2xl: calc(var(--radius) + 8px);
-  --radius-3xl: calc(var(--radius) + 12px);
-  --radius-4xl: calc(var(--radius) + 16px);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
 }
 
 :root {
-  --radius: 0.9rem;
-  --font-mono:
-    ui-monospace, SFMono-Regular, SFMono, Menlo, Monaco, Consolas,
-    "Liberation Mono", "Courier New", monospace;
+  --background: #f7f2eb;
+  --foreground: #221b12;
+  --card: #fffcf7;
+  --card-foreground: #221b12;
+  --popover: #fffcf7;
+  --popover-foreground: #221b12;
+  --primary: #4a8027;
+  --primary-foreground: #ffffff;
+  --secondary: #7a1a95;
+  --secondary-foreground: #ffffff;
+  --muted: #eee7da;
+  --muted-foreground: #6e604f;
+  --accent: #dd3a51;
+  --accent-foreground: #ffffff;
+  --destructive: #b91c1c;
+  --border: #d4c5ab;
+  --input: #d4c5ab;
+  --ring: #4a8027;
+}
+
+.dark {
   --background: #040901;
   --foreground: #ebfae4;
   --card: #0b1308;
@@ -70,192 +69,61 @@
   --border: #1c2a19;
   --input: #1c2a19;
   --ring: #b0ea87;
-  --chart-1: #b0ea87;
-  --chart-2: #7a1a95;
-  --chart-3: #dd3a51;
-  --chart-4: #76d7ff;
-  --chart-5: #f6c453;
-  --sidebar: #060d04;
-  --sidebar-foreground: #ebfae4;
-  --sidebar-primary: #b0ea87;
-  --sidebar-primary-foreground: #040901;
-  --sidebar-accent: #0f1a0b;
-  --sidebar-accent-foreground: #ebfae4;
-  --sidebar-border: #1c2a19;
-  --sidebar-ring: #b0ea87;
-  --grid-line: rgba(176, 234, 135, 0.08);
-  --grid-line-strong: rgba(235, 250, 228, 0.12);
-  --shape-primary: rgba(176, 234, 135, 0.18);
-  --shape-secondary: rgba(122, 26, 149, 0.2);
-  --shape-accent: rgba(221, 58, 81, 0.2);
+}
+
+.font-got,
+.font-bungee {
+  font-family: var(--font-bungee), sans-serif;
 }
 
 @layer base {
-  * {
-    @apply border-border outline-ring/50;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-
   html {
     scroll-behavior: smooth;
   }
-
   body {
-    overflow-x: hidden;
-    min-height: 100vh;
     background-color: var(--background);
     color: var(--foreground);
-    position: relative;
-    isolation: isolate;
-    font-family: var(--font-sans);
-    color-scheme: dark;
-  }
-
-  body::before {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image:
-      linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
-      linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
-    background-size: 72px 72px;
-    pointer-events: none;
-    z-index: 0;
-  }
-
-  body::after {
-    content: "";
-    position: fixed;
-    inset: 0;
-    background-image:
-      radial-gradient(
-        520px circle at 18% 12%,
-        var(--shape-primary),
-        transparent 60%
-      ),
-      radial-gradient(
-        420px circle at 84% 18%,
-        var(--shape-secondary),
-        transparent 62%
-      ),
-      radial-gradient(
-        480px circle at 78% 82%,
-        var(--shape-accent),
-        transparent 64%
-      ),
-      radial-gradient(
-        420px circle at 14% 78%,
-        rgba(176, 234, 135, 0.26),
-        transparent 62%
-      ),
-      radial-gradient(
-        360px circle at 46% 92%,
-        rgba(122, 26, 149, 0.28),
-        transparent 64%
-      ),
-      radial-gradient(
-        520px circle at 92% 88%,
-        rgba(221, 58, 81, 0.26),
-        transparent 65%
-      );
-    pointer-events: none;
-    z-index: 0;
-  }
-
-  body > * {
-    position: relative;
-    z-index: 1;
-  }
-
-  *::-webkit-scrollbar {
-    display: none;
-  }
-
-  body.open {
-    overflow-y: hidden;
+    font-family: var(--font-sans), sans-serif;
+    transition:
+      background-color 0.3s ease,
+      color 0.3s ease;
   }
 }
 
-@layer base {
-  section {
-    scroll-margin-top: 96px;
+
+@property --beam-angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@keyframes beam-spin {
+  to {
+    --beam-angle: 360deg;
   }
 }
 
-@layer utilities {
-  .font-display {
-    font-family: var(--font-bungee), var(--font-sans);
-    font-weight: 400;
-  }
-
-  .footer-glow {
-    position: relative;
-    overflow: hidden;
-  }
-
-  .footer-glow::before {
-    content: "";
-    position: absolute;
-    inset: -120px 0 -160px 0;
-    /* background-image:
-      radial-gradient(
-        520px circle at 18% 80%,
-        rgba(176, 234, 135, 0.32),
-        transparent 70%
-      ),
-      radial-gradient(
-        420px circle at 52% 92%,
-        rgba(122, 26, 149, 0.34),
-        transparent 72%
-      ),
-      radial-gradient(
-        520px circle at 86% 86%,
-        rgba(221, 58, 81, 0.32),
-        transparent 72%
-      ); */
-    pointer-events: none;
-    z-index: 0;
-  }
-
-  .footer-glow > * {
-    position: relative;
-    z-index: 1;
-  }
-}
-
-/* Loader Animation */
-@keyframes loader {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-/* Bounce Animation */
-@keyframes bounce {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-5px);
-  }
-}
-
-/* Chevron Bounce */
-@keyframes chevronBounce {
-  0%,
-  100% {
-    bottom: 20px;
-  }
-  50% {
-    bottom: 30px;
-  }
+.border-beam {
+  position: absolute;
+  inset: -1px; /* sits over the 1px border so the edge stays perfectly round */
+  border-radius: inherit;
+  padding: 3px; /* ring thickness */
+  background: conic-gradient(
+    from var(--beam-angle),
+    transparent 0deg,
+    transparent 180deg,
+    rgba(255, 255, 255, 0.08) 230deg,
+    rgba(255, 255, 255, 0.35) 290deg,
+    rgba(255, 255, 255, 0.85) 335deg,
+    #ffffff 348deg,
+    transparent 360deg /* soft head instead of a hard cut */
+  );
+  /* Cut out the middle so only the ring shows */
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  animation: beam-spin 2.4s cubic-bezier(0.45, 0, 0.55, 1) infinite;
+  pointer-events: none;
 }

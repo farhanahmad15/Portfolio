@@ -4,21 +4,15 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { bungee } from "@/lib/font-config";
-import posthog from "posthog-js";
 
 export function EasterEgg() {
   const [isVisible, setIsVisible] = useState(false);
   const colorPalette = ["#b0ea87", "#7a1a95", "#dd3a51", "#ebfae4", "#9bb38f"];
 
   const toggleBobby = () => {
-    const next = !isVisible;
-    setIsVisible(next);
-    if (next) {
-      posthog.capture("easter_egg_revealed");
-    }
+    setIsVisible((prev) => !prev);
   };
 
-  // Generate colored letters for the footer text using deterministic colors
   const renderColoredText = (text: string) => {
     return text.split("").map((letter, index) => {
       const color = colorPalette[index % colorPalette.length];
@@ -32,22 +26,17 @@ export function EasterEgg() {
 
   return (
     <>
-      <footer className="footer-glow py-8">
-        <div className="mx-auto flex w-full max-w-6xl flex-col items-center gap-3 px-6 text-center">
-          <button
-            type="button"
-            className={`${bungee.className} cursor-pointer text-sm font-semibold uppercase tracking-[0.2em] text-[#ebfae4]/70 hover:text-[#ebfae4]`}
-            onClick={toggleBobby}
-          >
-            {renderColoredText(
-              `© ${new Date().getFullYear()} Farhan Ahmad. All rights reserved.`,
-            )}
-          </button>
-          {/* <p className="text-xs text-[#ebfae4]/50">
-            Tap the footer to reveal a hidden friend.
-          </p> */}
-        </div>
-      </footer>
+      <div className="py-8 text-center">
+        <button
+          type="button"
+          className={`${bungee.className} cursor-pointer text-sm font-semibold uppercase tracking-[0.2em] text-[#ebfae4]/70 hover:text-[#ebfae4] transition-colors`}
+          onClick={toggleBobby}
+        >
+          {renderColoredText(
+            `© ${new Date().getFullYear()} Farhan Ahmad. All rights reserved.`,
+          )}
+        </button>
+      </div>
 
       <AnimatePresence>
         {isVisible && (
